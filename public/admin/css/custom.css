@@ -1,0 +1,77 @@
+.form-control, .dataTables_wrapper .dataTables_length select, .dataTables_wrapper .dataTables_filter input {
+    background-color: #f3f1ff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid #d9d6f3 !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: bold;
+}
+/* Style the signup and login buttons */
+.btn[type="submit"]
+{
+    margin:auto;
+}
+/* Change the color of form buttons on hover */
+form .btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Apply gradient background to the sidebar */
+.sidebar {
+    background: linear-gradient(to right, #3498db, #57a4ff);
+}
+
+/* Apply gradient background to the header */
+.header {
+    background: linear-gradient(to bottom, #333, #000);
+}
+
+body {
+    background: linear-gradient(to bottom, #e6e1fd30, #cfcceb75)
+
+}
+
+.bg-light
+{
+    background-color: #f1f4f89c !important;
+}
+/* Style the sidebar links with gradient text color */
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar-pills a:not(:hover), .sidebar-pills a:not(:active), .sidebar-pills a:not(:focus), .sidebar-pills a:not(.open), .sidebar-pills a:not(.active), .sidebar-pills li, .sidebar.sidebar-pills .nav-link.active, .sidebar.sidebar-pills .nav-link:hover, .sidebar.sidebar-pills .nav-link.active .nav-icon, .sidebar.sidebar-pills .nav-link:hover .nav-icon, .sidebar .nav-link .nav-icon
+{
+    color: #fff !important;
+}
+
+footer.app-footer , .sticky-footer{
+    display: none;
+}
+/* Style buttons with gradient background */
+.btn {
+    background: linear-gradient(to right, #57a4ff, #3498db);
+    color: #fff !important;
+    border: none;
+    padding: 7px 18px;
+    border-radius: 20px;
+    width: max-content;
+    cursor: pointer;
+}
+.sidebar .nav-dropdown-toggle::before
+{
+    filter: brightness(10);
+}
+/* Change button color on hover */
+.btn:hover, .dropdown-item.active, .dropdown-item:active, .page-item.active .page-link {
+    background: linear-gradient(to right, #3498db, #57a4ff);
+    color:#fff !important;
+}
+a {
+    color: #3c9ae3 !important;
+}
