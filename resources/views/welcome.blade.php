@@ -192,7 +192,8 @@
             <img src="https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg" alt="Placeholder Image"
                 class="object-cover w-full h-full">
             <h1
-                class=" backdrop-blur-xl p-10 rounded-3xl absolute text-xl lg:text-3xl font-semibold text-white dark:text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 "> Our 
+                class=" backdrop-blur-xl p-10 rounded-3xl absolute text-xl lg:text-3xl font-semibold text-white dark:text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                Our
                 Ambitions and Rationale</h1>
         </div>
         <!-- Right: Text -->
@@ -529,7 +530,7 @@
     <section class="bg-black">
         <div class="max-w-lg bg-black px-4 pt-24 py-8 mx-auto text-left md:max-w-none md:text-center">
             <h1
-                class="text-3xl font-extrabold leading-10 tracking-tight text-left text-white text-center sm:leading-none md:text-6xl text-4xl lg:text-7xl">
+                class="text-3xl font-extrabold leading-10 tracking-tight text-white text-center sm:leading-none md:text-6xl lg:text-7xl">
                 <span class="inline md:block">Questions?</span>
                 <span
                     class=" mt-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-emerald-400 to-green-500 md:inline-block">
