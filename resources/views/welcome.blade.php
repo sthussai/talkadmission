@@ -249,7 +249,7 @@
                 <div class="mt-4 md:mx-4 md:mt-0">
                     <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize ">Price control</h1>
 
-                    <p class="my-3  text-gray-500 dark:text-gray-300">
+                    <p class="my-3  text-gray-500 ">
                         Current pre-admission markets are unregulated and competitive. Hence prices can be exorbitantly
                         high for admission prep and interview training. We’re motivated to bring them back down to
                         reason.
@@ -270,7 +270,7 @@
                 <div class="mt-4 md:mx-4 md:mt-0">
                     <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize ">Variable needs</h1>
 
-                    <p class="my-3 text-gray-500 dark:text-gray-300">
+                    <p class="my-3 text-gray-500 ">
                         Some students can benefit a lot from interview practice. Some may only need a little help. Some
                         are already ready and could just use the reassurance. Paying hundreds of dollars for the average
                         interview prep plan available in the current market is not the solution for all.
@@ -294,7 +294,7 @@
                     <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize ">Indeterminate impact
                     </h1>
 
-                    <p class="mt-3 text-gray-500 dark:text-gray-300">
+                    <p class="mt-3 text-gray-500 ">
                         It is hard to determine the impact of paid interview prep in securing admission. Many applicants
                         are already strong candidates, including having solid interviewing skills, that give them a high
                         chance of getting admitted. So how do we know that $1500 interview prep plan made a difference?
