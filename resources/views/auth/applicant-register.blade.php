@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>{{__('TalkAdmission')}}</title>
+    <title>Profile</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -24,16 +24,28 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
     </script>
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         body,
         html {
             height: 100%;
         }
 
-        /* First image (Logo. Full height) */
+        /* Applicant image (Logo. Full height) */
         .bgimg-1 {
-            background-image: url('{{$hero_url ?? "https://www.w3schools.com/w3images/forestbridge.jpg"}}');
+            background-image: url('{{$hero_url ?? "https://cdn.pixabay.com/photo/2016/02/07/21/03/computer-1185626_1280.jpg"}}');
+            min-height: 100%;
+            animation-name: example;
+            animation-duration: 20s;
+            animation-iteration-count: 2;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* Mentor image (Logo. Full height) */
+        .bgimg-2 {
+            background-image: url('{{$hero_url ?? "https://cdn.pixabay.com/photo/2019/08/14/09/53/consulting-4405260_1280.jpg"}}');
             min-height: 100%;
             animation-name: example;
             animation-duration: 20s;
@@ -99,7 +111,6 @@
         #form form input:focus {
             border-width: 5px;
             border-color: dodgerblue !important;
-
         }
 
         #form .row>button {
@@ -117,7 +128,6 @@
             transition: all .3s linear;
             z-index: 2
         }
-
 
         @media (max-width: 767px) {
             #form {
@@ -139,7 +149,7 @@
             width: 2px !important;
             top: 100%;
             left: 10px;
-            background-color: rgba(255, 255, 255, .2);
+            background-color: rgba(255, 255, 255, .1);
             z-index: -1;
             overflow: hidden;
             animation: move 10s linear infinite;
@@ -236,6 +246,8 @@
 
         }
 
+
+
         .loader {
             width: 20px;
             height: 20px;
@@ -306,21 +318,38 @@
         <a href="/" class="btn w3-display-topleft w3-text-white w3-padding-large w3-xlarge">
             Talk Admission
         </a>
-
         <section id="form" class="w3-opacity-min">
             <div id="myOverlay" class="overlay"></div>
+            <div id="toggle-forms">
+                <!--                 <div class="">
+                    <a href="{{ url('/') }}" class="w3-padding w3-large w3-blue-grey w3-margin-bottom w3-btn ">{{
+                        config('app.name', 'Laravel') }}</a>
+                </div> -->
+                <a href="/login" class="btn waves-effect waves-light w3-large w3-padding active" id="login">Login</a>
+                <!-- <a class="btn waves-effect waves-light w3-large w3-padding " id="register">Register</a> -->
 
-            <form name="loginForm" method="POST" action="{{ route('login') }}" class="col s12 w3-text-white">
+            </div>
+
+
+            <form name="registerForm" method="POST" action="{{ route('register') }}" class="col w3-text-white s12">
                 @csrf
-
-                <div class="row">
-                    <h4 class="w3-text-white w3-large">Welcome</h4>
+                <div id="myOverlay" class="overlay"></div>
+                <div class="row center-align">
+                    <h4 class="w3-text-white w3-large">New Applicant Registertion</h4>
                 </div>
-
+                <div class="row" style="margin-top:25px">
+                    <input id="usertype" name="usertype" value="applicant" required type="hidden">
+                    <input id="name " name="name" value="{{ old('name') }}" required type="text">
+                    <label for="name">{{ __('Name') }}</label>
+                    @if ($errors->has('name'))
+                    <div class="w3-text-red w3-padding-top">
+                        <strong>{{ $errors->first('name') }}</strong>
+                    </div>
+                    @endif
+                </div>
                 <div class="row">
-                    <input id="email" name="email" type="email" class=""
-                        value="{{ old('email') }}" required>
-                    <label for="email">{{ __('E-Mail')}}</label>
+                    <input id="email " name="email" value="{{ old('email') }}" required type="email">
+                    <label for="email">{{ __('Email') }}</label>
                     @if ($errors->has('email'))
                     <div class="w3-text-red w3-padding-top">
                         <strong>{{ $errors->first('email') }}</strong>
@@ -328,42 +357,28 @@
                     @endif
                 </div>
                 <div class="row">
-                    <input id="password" type="password" class="" name="password" required>
-
+                    <input type="password" name="password" required>
+                    <label for="password">Password</label>
                     @if ($errors->has('password'))
                     <div class="w3-text-red w3-padding-top">
                         <strong>{{ $errors->first('password') }}</strong>
                     </div>
                     @endif
-                    <label for="password">{{ __('Password')}}</label>
 
                 </div>
 
-                <div class="row " style="margin-top:25px">
-                    <input class="w3-check" style="padding:-15px;" type="checkbox">
-                    <span id="checkbox" style="font-size:15px;padding:15px;" for="checkbox">Remember Me</span>
+                <div class="row">
+                    <input name="password_confirmation" type="password" required>
+                    <label for="password-confirm">Confirm Password</label>
+
                 </div>
-
-                <div class=" row " style="margin-top:25px">
-
+                <div class="row">
                     <button onclick="showLoader()"
                         class="btn w3-button w3-blue-grey w3-padding w3-large waves-effect waves-light">
-                        Login
+                        Register
                     </button>
                     <span class="loader w3-right" id="loader-1"></span>
                 </div>
-
-                <div class="row">
-                    <label for="reset" class="w3-text-white">Password lost? <a href="{{ route('password.request') }}"
-                            class="w3-hover-shadow"
-                            style="cursor:pointer; text-decoration: underline;">Reset</a></label>
-                </div>
-                <div class="row">
-                    <label for="register" class="w3-text-white">Not registered? <a href="{{ route('register') }}"
-                            class="w3-hover-shadow"
-                            style="cursor:pointer; text-decoration: underline;">Register</a></label>
-                </div>
-
                 <ul class="animate">
                     <li></li>
                     <li></li>
@@ -376,31 +391,17 @@
             </form>
 
 
-
-
         </section>
 
     </div>
 
     <script>
-        let $id = (id) => document.getElementById(id);
-        var [login, register, form] = ['login', 'register', 'form'].map(id => $id(id));
-
-        [login, register].map(element => {
-            element.onclick = function() {
-                [login, register].map($ele => {
-                    $ele.classList.remove("active");
-                });
-                this.classList.add("active");
-                this.getAttribute("id") === "register" ? form.classList.add("active") : form.classList
-                    .remove("active");
-            }
-        });
-
         function showLoader() {
-            var email = document.forms["loginForm"]["email"].value;
-            var password = document.forms["loginForm"]["password"].value;
-            if (email == "" || password == "") {
+            var name = document.forms["registerForm"]["name"].value;
+            var email = document.forms["registerForm"]["email"].value;
+            var password = document.forms["registerForm"]["password"].value;
+            var passwordConfirm = document.forms["registerForm"]["password-confirm"].value;
+            if (name == "" || email == "" || password == "" || passwordConfirm == "") {
                 console.log('something is empty');
                 return false;
             }
@@ -408,5 +409,6 @@
             document.getElementById("loader-1").style.display = "block";
         }
     </script>
+
 
 </body>

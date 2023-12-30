@@ -33,33 +33,70 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+
+    <style>
+          /* Create a sticky/fixed navbar */
+  #navbar {
+    max-width: 2000px;
+    margin: auto;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px 10px;
+    /* Large padding which will shrink on scroll (using JS) */
+    transition: 0.4s;
+    /* Adds a transition effect when the padding is decreased */
+    position: fixed;
+    /* Sticky/fixed navbar */
+    width: 100%;
+    top: 0;
+    /* At the top */
+    z-index: 99;
+  }
+
+  /* Style the logo */
+  #navbar #logo {
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.4s;
+  }
+
+    </style>
 </head>
 
 <body class="antialiased">
 
-    <!-- START Navbar Section -->
-    <div id='navbar' class="">
-        <div class="fixed top-0 left-0 px-6 py-4 sm:block" style="z-index: 2;">Talk Admissions
+<div id='navbar' class="w3-opacity-min">
+    <h1 id='logo'>Talk Admission</h1>
+    <div class="">
+                        @if (Route::has('login'))
+                            <div class=" fixed top-0 right-0 px-6 py-4 sm:block" style="z-index: 2;">
+                                @auth
+                                    <a href="{{ url('/dashboard') }}" class="">Dashboard</a>
+                                @else
+                                    <a href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
+                                    
+
+                                    @if (Route::has('register'))
+                                        <div class="w3-dropdown-hover w3-right ">
+          <button class="w3-bar-item w3-right w3-button w3-small "
+            title="Registrations">Register</button>
+          <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-small" style="width:150px; margin-top:30px">
+            <a href="/mentorregister" class="w3-bar-item w3-right w3-button w3-small ">Mentor</a>
+            <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Applicant</a>
+            <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Users</a>
+          </div>
         </div>
-        <div class="">
-            @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block" style="z-index: 2;">
-                @auth
-                <a href="{{ url('/dashboard') }}" class="">Dashboard</a>
-                @else
-                <a href="{{ route('login') }}" class="">Log in</a>
+        <!--  END Top Right Registation dropdown -->
+                                    @endif
+                                @endauth
+                            </div>
+                        @endif
+                    </div>
+</div>
 
-                @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="ml-4 ">Register</a>
-                @endif
-                @endauth
-            </div>
-            @endif
-        </div>
 
-    </div>
 
-    <!-- END Navbar Section -->
+
 
 
     <div class="bg-white">
@@ -496,7 +533,7 @@
                     <div class="flex justify-between pt-8">
 
                         <div class="flex flex-col justify-end">
-                            <a href="#" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Sign
+                            <a href="/mentorregister" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Sign
                                 Up</a>
                         </div>
                     </div>
@@ -514,7 +551,7 @@
                     <div class="flex justify-between pt-8">
 
                         <div class="flex flex-col justify-end">
-                            <a href="#" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Sign
+                            <a href="applicantregister" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Sign
                                 up</a>
                         </div>
                     </div>
@@ -563,5 +600,25 @@
 
 </body>
 
+
+<script>
+    // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+    window.onscroll = function() {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("navbar").style.padding = "20px 10px 10px";
+        document.getElementById("logo").style.fontSize = "25px";
+        document.getElementById("navbar").style.opacity = "1.0";
+      } else {
+        document.getElementById("navbar").style.padding = "20px 10px 10px";
+        document.getElementById("navbar").style.opacity = "0.7";
+        document.getElementById("logo").style.fontSize = "35px";
+      }
+    }
+
+</script>
 
 </html>
