@@ -35,64 +35,63 @@
 
 
     <style>
-          /* Create a sticky/fixed navbar */
-  #navbar {
-    max-width: 2000px;
-    margin: auto;
-    overflow: hidden;
-    background-color: #f1f1f1;
-    padding: 20px 10px 10px;
-    /* Large padding which will shrink on scroll (using JS) */
-    transition: 0.4s;
-    /* Adds a transition effect when the padding is decreased */
-    position: fixed;
-    /* Sticky/fixed navbar */
-    width: 100%;
-    top: 0;
-    /* At the top */
-    z-index: 99;
-  }
+        /* Create a sticky/fixed navbar */
+        #navbar {
+            max-width: 2000px;
+            margin: auto;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            padding: 20px 10px 10px;
+            /* Large padding which will shrink on scroll (using JS) */
+            transition: 0.4s;
+            /* Adds a transition effect when the padding is decreased */
+            position: fixed;
+            /* Sticky/fixed navbar */
+            width: 100%;
+            top: 0;
+            /* At the top */
+            z-index: 99;
+        }
 
-  /* Style the logo */
-  #navbar #logo {
-    font-size: 35px;
-    font-weight: bold;
-    transition: 0.4s;
-  }
-
+        /* Style the logo */
+        #navbar #logo {
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.4s;
+        }
     </style>
 </head>
 
 <body class="antialiased">
 
-<div id='navbar' class="w3-opacity-min">
-    <h1 id='logo'>Talk Admission</h1>
-    <div class="">
-                        @if (Route::has('login'))
-                            <div class=" fixed top-0 right-0 px-6 py-4 sm:block" style="z-index: 2;">
-                                @auth
-                                    <a href="{{ url('/dashboard') }}" class="">Dashboard</a>
-                                @else
-                                    <a href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
-                                    
+    <div id='navbar' class="w3-opacity-min">
+        <h1 id='logo'>Talk Admission</h1>
+        <div class="">
+            @if (Route::has('login'))
+            <div class=" fixed top-0 right-0 px-6 py-4 sm:block" style="z-index: 2;">
+                @auth
+                <a href="{{ url('/dashboard') }}" class="">Dashboard</a>
+                @else
+                <a href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
 
-                                    @if (Route::has('register'))
-                                        <div class="w3-dropdown-hover w3-right ">
-          <button class="w3-bar-item w3-right w3-button w3-small "
-            title="Registrations">Register</button>
-          <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-small" style="width:150px; margin-top:30px">
-            <a href="/mentorregister" class="w3-bar-item w3-right w3-button w3-small ">Mentor</a>
-            <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Applicant</a>
-            <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Users</a>
-          </div>
-        </div>
-        <!--  END Top Right Registation dropdown -->
-                                    @endif
-                                @endauth
-                            </div>
-                        @endif
+
+                @if (Route::has('register'))
+                <div class="w3-dropdown-hover w3-right ">
+                    <button class="w3-bar-item w3-right w3-button w3-small " title="Registrations">Register</button>
+                    <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-small"
+                        style="width:150px; margin-top:30px">
+                        <a href="/mentorregister" class="w3-bar-item w3-right w3-button w3-small ">Mentor</a>
+                        <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Applicant</a>
+                        <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Users</a>
                     </div>
-</div>
+                </div>
+                <!--  END Top Right Registation dropdown -->
+                @endif
+                @endauth
+            </div>
+            @endif
+        </div>
+    </div>
 
 
 
@@ -141,7 +140,7 @@
 
                 <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                     <div class="mx-auto text-center my-12">
-                        <p class="my-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">PRACTICE WITH
+                        <p class="my-3 text-3xl font-bold tracking-tight text-gray-500 sm:text-4xl">PRACTICE WITH
                             CURRENT MEDICAL STUDENTS</p>
                     </div>
                     <p class="mt-3 text-gray-500 dark:text-gray-300 ">
@@ -229,7 +228,7 @@
             <img src="https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg" alt="Placeholder Image"
                 class="object-cover w-full h-full">
             <h1
-                class=" backdrop-blur-xl p-10 rounded-3xl absolute text-xl lg:text-3xl font-semibold text-white dark:text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                class=" backdrop-blur-xl p-10 rounded-3xl absolute text-xl lg:text-3xl font-semibold text-white  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
                 Our
                 Ambitions and Rationale</h1>
         </div>
@@ -239,7 +238,7 @@
 
             <div class="md:flex md:items-start md:-mx-4">
                 <span
-                    class="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
+                    class="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4  dark:bg-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -248,7 +247,7 @@
                 </span>
 
                 <div class="mt-4 md:mx-4 md:mt-0">
-                    <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize dark:text-white">Price control</h1>
+                    <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize ">Price control</h1>
 
                     <p class="my-3  text-gray-500 dark:text-gray-300">
                         Current pre-admission markets are unregulated and competitive. Hence prices can be exorbitantly
@@ -260,7 +259,7 @@
 
             <div class="md:flex md:items-start md:-mx-4">
                 <span
-                    class="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
+                    class="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4  dark:bg-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -269,7 +268,7 @@
                 </span>
 
                 <div class="mt-4 md:mx-4 md:mt-0">
-                    <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize dark:text-white">Variable needs</h1>
+                    <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize ">Variable needs</h1>
 
                     <p class="my-3 text-gray-500 dark:text-gray-300">
                         Some students can benefit a lot from interview practice. Some may only need a little help. Some
@@ -281,7 +280,7 @@
 
             <div class="md:flex md:items-start md:-mx-4">
                 <span
-                    class="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
+                    class="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4  dark:bg-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -292,7 +291,7 @@
                 </span>
 
                 <div class="mt-4 md:mx-4 md:mt-0">
-                    <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize dark:text-white">Indeterminate impact
+                    <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize ">Indeterminate impact
                     </h1>
 
                     <p class="mt-3 text-gray-500 dark:text-gray-300">
@@ -533,7 +532,8 @@
                     <div class="flex justify-between pt-8">
 
                         <div class="flex flex-col justify-end">
-                            <a href="/mentorregister" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Sign
+                            <a href="/mentorregister"
+                                class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Sign
                                 Up</a>
                         </div>
                     </div>
@@ -551,7 +551,8 @@
                     <div class="flex justify-between pt-8">
 
                         <div class="flex flex-col justify-end">
-                            <a href="applicantregister" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Sign
+                            <a href="applicantregister"
+                                class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Sign
                                 up</a>
                         </div>
                     </div>
@@ -603,20 +604,20 @@
 
 <script>
     // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-    window.onscroll = function() {
-      scrollFunction()
+    window.onscroll = function () {
+        scrollFunction()
     };
 
     function scrollFunction() {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementById("navbar").style.padding = "20px 10px 10px";
-        document.getElementById("logo").style.fontSize = "25px";
-        document.getElementById("navbar").style.opacity = "1.0";
-      } else {
-        document.getElementById("navbar").style.padding = "20px 10px 10px";
-        document.getElementById("navbar").style.opacity = "0.7";
-        document.getElementById("logo").style.fontSize = "35px";
-      }
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.padding = "20px 10px 10px";
+            document.getElementById("logo").style.fontSize = "25px";
+            document.getElementById("navbar").style.opacity = "1.0";
+        } else {
+            document.getElementById("navbar").style.padding = "20px 10px 10px";
+            document.getElementById("navbar").style.opacity = "0.7";
+            document.getElementById("logo").style.fontSize = "35px";
+        }
     }
 
 </script>
