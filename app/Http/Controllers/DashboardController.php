@@ -21,11 +21,11 @@ class DashboardController extends Controller
 
             if($usertype == 'applicant')
             {
-                return view('applicantdashboard');
+                return view('applicant.applicantdashboard');
             }
             else if($usertype == 'mentor')
             {
-                return view('mentordashboard');
+                return view('mentor.mentordashboard');
             }
             else {
                 return redirect()->back();

@@ -1,5 +1,5 @@
 <button onclick="openSettingsMenu()"
-  class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="Settings"><i
+  class="w3-bar-item w3-button w3-white w3-right w3-hide-small w3-padding-large w3-hover-grey" title="Settings"><i
     class="fa fa-gear"></i></button>
 
 <div class="w3-sidebar w3-padding w3-bar-block w3-text-black w3-card w3-animate-right"

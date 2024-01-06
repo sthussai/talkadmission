@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Spatie\Permission\Traits\HasRoles;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, CrudTrait, HasRoles;
@@ -22,6 +23,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'usertype',
+        'userable_type',
         'email',
         'password',
     ];
@@ -44,4 +46,30 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function ($user) {
+            $usertype = $user->usertype;
+
+            if ($usertype == 'applicant') {
+                $a = Applicant::create([
+                    'name' => $user->name,
+                ]);
+            } 
+            if ($usertype == 'mentor') {
+                $m = Mentor::create([
+                    'name' => $user->name,
+                ]);
+            }
+
+        });
+    }
+
+    public function userable()
+    {
+        return $this->morphTo();
+    }
 }

@@ -25,6 +25,7 @@
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
         @include('layouts.navigation')
         @include('layouts.includes.settings_menu')
+        @include('layouts.includes.fullscreen_search')
 
         <!-- Page Heading -->
         @if (isset($header))
