@@ -24,40 +24,27 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-        @if(auth()->user()->usertype =='applicant')
-        @include('applicant.includes.navbar')
-        @include('applicant.includes.settings_menu')
-        @include('applicant.includes.fullscreen_search')
-        @endif
-        @if(auth()->user()->usertype =='mentor')
         @include('mentor.includes.navbar')
         @include('mentor.includes.settings_menu')
         @include('mentor.includes.fullscreen_search')
-        @endif
         <!-- Page Heading -->
-        @if (isset($header))
+
         <header class="bg-white dark:bg-gray-800 shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
+            @yield('header')
             </div>
         </header>
-        @endif
 
         <!-- Side bar -->
         <div class="flex flex-row  ">
-            <sidebar class=" w-1/4">
-                @if(auth()->user()->usertype =='applicant')
-                @include('applicant.includes.sidebar')
-                @endif
-                @if(auth()->user()->usertype =='mentor')
+            <sidebar class=" w-1/4" >
                 @include('mentor.includes.sidebar')
-                @endif
             </sidebar>
 
 
             <!-- Page Content -->
             <main class=" bg-gray-100 text-gray-700 w-full">
-                {{ $body }}
+                @yield('body')
             </main>
         </div>
 

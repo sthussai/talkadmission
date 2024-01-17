@@ -9,10 +9,13 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
+    use InteractsWithMedia;
     use HasApiTokens, HasFactory, Notifiable, CrudTrait, HasRoles;
 
     /**
@@ -25,6 +28,7 @@ class User extends Authenticatable
         'usertype',
         'userable_type',
         'email',
+        'avatar_url',
         'password',
     ];
 

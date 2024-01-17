@@ -5,7 +5,7 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "backpack/crud": "^6.3",
         "backpack/permissionmanager": "^7.0",
         "backpack/theme-coreuiv2": "^1.2",
@@ -15,7 +15,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "laravel/ui": "^4.3"
+        "laravel/ui": "^4.3",
+        "spatie/laravel-medialibrary": "11.0.0"
     },
     "require-dev": {
         "backpack/generators": "^4.0",

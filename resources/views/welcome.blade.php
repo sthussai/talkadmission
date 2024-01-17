@@ -25,11 +25,10 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/app.css">
+    
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Scripts -->
-    <script src="js/app.js" defer></script>
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -82,7 +81,7 @@
                         style="width:150px; margin-top:30px">
                         <a href="/mentorregister" class="w3-bar-item w3-right w3-button w3-small ">Mentor</a>
                         <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Applicant</a>
-                        <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Users</a>
+                        <a href="/users" class="w3-bar-item w3-right w3-button w3-small ">Users</a>
                     </div>
                 </div>
                 <!--  END Top Right Registation dropdown -->

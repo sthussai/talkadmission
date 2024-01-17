@@ -1,9 +1,19 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MediaController;
+use App\Http\Controllers\MentorController;
+use App\Http\Controllers\ApplicantController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\SearchUsersController;
+use App\Models\Applicant;
+use App\Models\Appointment;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Middleware\UserIsApplicant;
+use App\Http\Middleware\UserIsMentor;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,23 +26,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('appointments', AppointmentController::class);
+Route::resource('schedule', ScheduleController::class);
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
+Route::get('/back', function () {
+    return redirect()->route('dashboard');
+});
 Route::get('/mentorregister', function () {
     return view('auth.mentor-register');
 });
 Route::get('/applicantregister', function () {
     return view('auth.applicant-register');
 });
+Route::get('/users',[HomeController::class, 'users'])->name('users');
 
 Route::get('/home', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
-/* Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard'); */
+
+Route::get('/media', [MediaController::class, 'index'])->name('media');
+Route::post('/media', [MediaController::class, 'store'])->name('storeMedia');
+Route::post('/addavatar', [MediaController::class, 'update'])->name('addAvatar');
+Route::post('/deletemedia', [MediaController::class, 'destroy'])->name('deleteMedia');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,3 +61,13 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+
+
+Route::get('/inbox', function () {
+    return view('inbox.index');
+});
+
+/* Ajax user search controller */
+Route::get('/search', [SearchUsersController::class, 'search']);

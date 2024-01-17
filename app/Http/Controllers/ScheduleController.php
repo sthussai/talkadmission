@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AppointmentController extends Controller
+class ScheduleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view("appointments.index");
+        return view("schedule.index");
     }
 
     /**
@@ -19,8 +19,7 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        return view("appointments.create");
-
+        //
     }
 
     /**

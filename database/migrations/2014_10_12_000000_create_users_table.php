@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('userable_type');
             $table->string('usertype')->default('applicant');
             $table->string('email')->unique();
+            $table->string('avatar_url')->default('https://www.w3schools.com/w3images/avatar2.png');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
