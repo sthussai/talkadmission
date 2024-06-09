@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\MentorController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SearchUsersController;
 use App\Models\Applicant;
 use App\Models\Appointment;
+use App\Models\Portfolio;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\UserIsApplicant;
 use App\Http\Middleware\UserIsMentor;
@@ -28,6 +30,7 @@ use App\Http\Middleware\UserIsMentor;
 
 Route::resource('appointments', AppointmentController::class);
 Route::resource('schedule', ScheduleController::class);
+Route::resource('portfolio', PortfolioController::class);
 
 Route::get('/', function () {
     return view('welcome');
@@ -71,3 +74,7 @@ Route::get('/inbox', function () {
 
 /* Ajax user search controller */
 Route::get('/search', [SearchUsersController::class, 'search']);
+
+Route::get('/publicprofile', function () {
+    return view('publicprofile');
+})->name('publicprofile');

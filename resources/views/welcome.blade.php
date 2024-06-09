@@ -70,6 +70,7 @@
             <div class=" fixed top-0 right-0 px-6 py-4 sm:block" style="z-index: 2;">
                 @auth
                 <a href="{{ url('/dashboard') }}" class="">Dashboard</a>
+                <a href="{{ url('/publicprofile') }}" class="">Public Profile</a>
                 @else
                 <a href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
 
