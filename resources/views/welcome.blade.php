@@ -39,7 +39,8 @@
             max-width: 2000px;
             margin: auto;
             overflow: hidden;
-            background-color: #f1f1f1;
+            background-color: #37355f;
+            color: white;
             padding: 20px 10px 10px;
             /* Large padding which will shrink on scroll (using JS) */
             transition: 0.4s;
@@ -63,14 +64,14 @@
 
 <body class="antialiased">
 
-    <div id='navbar' class="w3-opacity-min">
-        <h1 id='logo'>Talk Admission</h1>
+    <div id='navbar' class="">
+        <h1 id='logo' class="px-5" >Talk Admissions</h1>
         <div class="">
             @if (Route::has('login'))
-            <div class=" fixed top-0 right-0 px-6 py-4 sm:block" style="z-index: 2;">
+            <div class=" fixed top-0 right-0 px-5 py-4 sm:block" style="z-index: 2;">
                 @auth
-                <a href="{{ url('/dashboard') }}" class="">Dashboard</a>
-                <a href="{{ url('/publicprofile') }}" class="">Public Profile</a>
+                <a href="{{ url('/dashboard') }}" class="px-5">Dashboard</a>
+                <a href="{{ url('/publicprofile') }}" class="px-5">Public Profile</a>
                 @else
                 <a href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
 
@@ -113,8 +114,8 @@
                         interviews?</h1>
                     <p class="mt-6 text-lg leading-8 text-gray-600">Connect with the students who've been there</p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
-                        <a href="#signup"
-                            class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
+                        <a href="#signup" style="background-color:#37355f"
+                            class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
                             started</a>
                         <a href="#practice" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span
                                 aria-hidden="true">→</span></a>
@@ -140,7 +141,7 @@
 
                 <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                     <div class="mx-auto text-center my-12">
-                        <p class="my-3 text-3xl font-bold tracking-tight text-gray-500 sm:text-4xl">PRACTICE WITH
+                        <p class="my-3 text-3xl font-bold tracking-tight sm:text-4xl">PRACTICE WITH
                             CURRENT MEDICAL STUDENTS</p>
                     </div>
                     <p class="mt-3 text-gray-500 dark:text-gray-300 ">
@@ -153,7 +154,7 @@
         </div>
     </section>
 
-    <div class="bg-gray-400 py-24 sm:py-32">
+    <div class="bg-violet-200 py-24 sm:py-32" >
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">CHOOSE THE APPROACH THAT IS
@@ -164,8 +165,8 @@
                 <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
                     <div class="relative pl-16">
                         <dt class="text-base lg:text-2xl  font-semibold leading-7 text-gray-900">
-                            <div
-                                class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                            <div style="background-color:#37355f"
+                                class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg ">
                                 <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                     stroke="currentColor" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -181,8 +182,8 @@
                     </div>
                     <div class="relative pl-16">
                         <dt class="text-base lg:text-2xl font-semibold leading-7 text-gray-900">
-                            <div
-                                class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                            <div style="background-color:#37355f"
+                                class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg ">
                                 <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                     stroke="currentColor" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -197,8 +198,8 @@
                     </div>
                     <div class="relative pl-16">
                         <dt class="text-base lg:text-2xl font-semibold leading-7 text-gray-900">
-                            <div
-                                class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                            <div style="background-color:#37355f"
+                                class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg ">
                                 <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                     stroke="currentColor" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -221,7 +222,7 @@
 
 
     <!-- 2x2 Square section START-->
-    <div class="bg-gray-100 flex md:flex-row flex-col justify-center items-center ">
+    <div class=" flex md:flex-row flex-col justify-center items-center " >
         <!-- Left: Image -->
         <div class="md:w-1/2 h-screen relative text-center">
 
@@ -233,12 +234,12 @@
                 Ambitions and Rationale</h1>
         </div>
         <!-- Right: Text -->
-        <div class="lg:p-20 md:p-10 p-8 w-full lg:w-1/2 md:w-1/2">
+        <div class="lg:p-20 md:p-10 p-8 w-full lg:w-1/2 md:w-1/2" >
 
 
-            <div class="md:flex md:items-start md:-mx-4">
-                <span
-                    class="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4  dark:bg-blue-500">
+            <div class="md:flex md:items-start md:-mx-4" >
+                <span style="background-color:#37355f; color:white;"
+                    class="inline-block p-2   rounded-xl md:mx-4  dark:bg-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -258,8 +259,8 @@
             </div>
 
             <div class="md:flex md:items-start md:-mx-4">
-                <span
-                    class="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4  dark:bg-blue-500">
+                <span style="background-color:#37355f; color:white;"
+                    class="inline-block p-2 rounded-xl md:mx-4  dark:bg-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -279,8 +280,8 @@
             </div>
 
             <div class="md:flex md:items-start md:-mx-4">
-                <span
-                    class="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4  dark:bg-blue-500">
+                <span style="background-color:#37355f; color:white;"
+                    class="inline-block p-2  rounded-xl md:mx-4  dark:bg-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -308,10 +309,10 @@
     <!-- 2x2 Square section END-->
 
     <!-- Display Container (not part of component) START -->
-    <div class=" mx-auto p-16 sm:p-24 lg:p-48 bg-gray-200">
+    <div class=" mx-auto p-16 sm:p-24 lg:p-48 bg-blue-200">
 
 
-        <div class="relative rounded-lg block md:flex items-center bg-gray-100 shadow-xl" style="min-height: 19rem;">
+        <div class="relative rounded-lg block md:flex items-center  shadow-xl" style="min-height: 19rem;">
             <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
                 style="min-height: 19rem;">
                 <img class="absolute inset-0 w-full h-full object-cover object-center"
@@ -319,7 +320,7 @@
                 <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
                 </div>
             </div>
-            <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg">
+            <div class="w-full md:w-3/5 h-full flex items-center  rounded-lg">
                 <div class="p-12 md:pr-24 md:pl-16 md:py-12">
                     <h2 class="mb-3 text-2xl font-bold text-black">High Return On Investment</h2>
                     <p class="font-sans text-lg text-black"> We control costs without compromising on quality. We’re
@@ -345,8 +346,8 @@
             </p>
         </div>
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-4 md:grid-cols-2">
-            <div class="overflow-hidden rounded-2xl bg-blue-50 p-4 lg:p-12">
-                <div class="flex items-center text-blue-500">
+            <div class="overflow-hidden rounded-2xl bg-blue-200 hover:bg-blue-100 hover:bg-blue-100 text-blue-500 p-4 lg:p-12">
+                <div class="flex items-center ">
                     <p class="text-sm font-bold uppercase">Schedule a MMI session</p>
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24"
@@ -386,8 +387,8 @@
 
             </div>
 
-            <div class="overflow-hidden rounded-2xl bg-pink-50 p-4 lg:p-12">
-                <div class="flex items-center text-pink-500">
+            <div class="overflow-hidden rounded-2xl bg-violet-200 hover:bg-violet-100 text-violet-500  p-4 lg:p-12">
+                <div class="flex items-center">
                     <p class="text-sm font-bold uppercase">Schedule an approach session</p>
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24"
@@ -418,14 +419,14 @@
                                 fill="#050D42"></path>
                             <path
                                 d="M512 592c-44.8 0-80-35.2-80-80s35.2-80 80-80 80 35.2 80 80-35.2 80-80 80zM272 312c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48zM416 880c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48z m448-432c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48z"
-                                fill="#ec4899"></path>
+                                fill="#a855f7"></path>
                         </g>
                     </svg>
                 </div>
             </div>
 
-            <div class="overflow-hidden rounded-2xl bg-green-50 p-4 lg:p-12">
-                <div class="flex items-center text-green-500">
+            <div class="overflow-hidden rounded-2xl bg-blue-200 hover:bg-blue-100 text-blue-500 p-4 lg:p-12">
+                <div class="flex items-center ">
                     <p class="text-sm font-bold uppercase">Schedule a Panel review session</p>
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24"
@@ -456,15 +457,15 @@
                                 fill="#050D42"></path>
                             <path
                                 d="M512 592c-44.8 0-80-35.2-80-80s35.2-80 80-80 80 35.2 80 80-35.2 80-80 80zM272 312c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48zM416 880c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48z m448-432c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48z"
-                                fill="#22c55e"></path>
+                                fill="#2F4BFF"></path>
                         </g>
                     </svg>
                 </div>
 
             </div>
 
-            <div class="overflow-hidden rounded-2xl bg-purple-50 p-4 lg:p-12">
-                <div class="flex items-center text-purple-500">
+            <div class="overflow-hidden rounded-2xl bg-violet-200 hover:bg-violet-100 text-violet-500 p-4 lg:p-12">
+                <div class="flex items-center">
                     <p class="text-sm font-bold uppercase">Schedule a file review session</p>
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24"
@@ -522,8 +523,8 @@
             <div>
                 <img src="https://cdn.pixabay.com/photo/2019/08/14/09/53/consulting-4405260_1280.jpg"
                     alt="Featured Image 1" class="rounded-t-xl" />
-                <div class="px-9 pt-10 pb-14 bg-blue-950 rounded-b-lg">
-                    <div class="text-white space-y-4">
+                <div class="px-9 pt-10 pb-14   bg-blue-200 hover:bg-blue-100  rounded-b-lg">
+                    <div class="space-y-4">
                         <h3 class="text-xl font-bold lead-xl bold">Are you a medical student?</h3>
                         <div class="text-lg font-light">Join as a mentor to share your experience with your future
                             colleagues
@@ -542,8 +543,8 @@
             <div class="">
                 <img src="https://cdn.pixabay.com/photo/2016/02/07/21/03/computer-1185626_1280.jpg"
                     alt="Featured Image 1" class="rounded-t-xl" />
-                <div class="px-9 pt-10 pb-14 bg-violet-600 rounded-b-lg">
-                    <div class="text-white space-y-4">
+                <div class="px-9 pt-10 pb-14 bg-violet-200 hover:bg-violet-100 rounded-b-lg">
+                    <div class=" space-y-4">
                         <h3 class="text-xl font-bold lead-xl bold">Applying to medical school?</h3>
                         <div class="text-lg font-light">Join as an applicant and connect with current medical students
                         </div>
@@ -612,10 +613,8 @@
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             document.getElementById("navbar").style.padding = "20px 10px 10px";
             document.getElementById("logo").style.fontSize = "25px";
-            document.getElementById("navbar").style.opacity = "1.0";
         } else {
             document.getElementById("navbar").style.padding = "20px 10px 10px";
-            document.getElementById("navbar").style.opacity = "0.7";
             document.getElementById("logo").style.fontSize = "35px";
         }
     }
