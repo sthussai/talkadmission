@@ -25,7 +25,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    
+
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -65,31 +65,31 @@
 <body class="antialiased">
 
     <div id='navbar' class="">
-        <h1 id='logo' class="px-5" >Talk Admissions</h1>
+        <h1 id='logo' class="px-5">Talk Admissions</h1>
         <div class="">
             @if (Route::has('login'))
-            <div class=" fixed top-0 right-0 px-5 py-4 sm:block" style="z-index: 2;">
-                @auth
-                <a href="{{ url('/dashboard') }}" class="px-5">Dashboard</a>
-                <a href="{{ url('/publicprofile') }}" class="px-5">Public Profile</a>
-                @else
-                <a href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
+                <div class=" fixed top-0 right-0 px-5 py-4 sm:block" style="z-index: 2;">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="px-5">Dashboard</a>
+                        <a href="{{ url('/publicprofile') }}" class="px-5">Public Profile</a>
+                    @else
+                        <a href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
 
 
-                @if (Route::has('register'))
-                <div class="w3-dropdown-hover w3-right ">
-                    <button class="w3-bar-item w3-right w3-button w3-small " title="Registrations">Register</button>
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-small"
-                        style="width:150px; margin-top:30px">
-                        <a href="/mentorregister" class="w3-bar-item w3-right w3-button w3-small ">Mentor</a>
-                        <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Applicant</a>
-                        <a href="/users" class="w3-bar-item w3-right w3-button w3-small ">Users</a>
-                    </div>
+                        @if (Route::has('register'))
+                            <div class="w3-dropdown-hover w3-right ">
+                                <button class="w3-bar-item w3-right w3-button w3-small " title="Registrations">Register</button>
+                                <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-small"
+                                    style="width:150px; margin-top:30px">
+                                    <a href="/mentorregister" class="w3-bar-item w3-right w3-button w3-small ">Mentor</a>
+                                    <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Applicant</a>
+                                    <a href="/users" class="w3-bar-item w3-right w3-button w3-small ">Users</a>
+                                </div>
+                            </div>
+                            <!--  END Top Right Registation dropdown -->
+                        @endif
+                    @endauth
                 </div>
-                <!--  END Top Right Registation dropdown -->
-                @endif
-                @endauth
-            </div>
             @endif
         </div>
     </div>
@@ -154,7 +154,7 @@
         </div>
     </section>
 
-    <div class="bg-violet-200 py-24 sm:py-32" >
+    <div class="bg-violet-200 py-24 sm:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">CHOOSE THE APPROACH THAT IS
@@ -222,7 +222,7 @@
 
 
     <!-- 2x2 Square section START-->
-    <div class=" flex md:flex-row flex-col justify-center items-center " >
+    <div class=" flex md:flex-row flex-col justify-center items-center ">
         <!-- Left: Image -->
         <div class="md:w-1/2 h-screen relative text-center">
 
@@ -234,10 +234,10 @@
                 Ambitions and Rationale</h1>
         </div>
         <!-- Right: Text -->
-        <div class="lg:p-20 md:p-10 p-8 w-full lg:w-1/2 md:w-1/2" >
+        <div class="px-16 w-full lg:w-1/2 md:w-1/2">
 
 
-            <div class="md:flex md:items-start md:-mx-4" >
+            <div class="md:flex md:items-start md:-mx-4">
                 <span style="background-color:#37355f; color:white;"
                     class="inline-block p-2   rounded-xl md:mx-4  dark:bg-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
@@ -247,7 +247,7 @@
                     </svg>
                 </span>
 
-                <div class="mt-4 md:mx-4 md:mt-0">
+                <div class="my-5 md:mx-4 md:mt-0">
                     <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize ">Price control</h1>
 
                     <p class="my-3  text-gray-500 ">
@@ -268,7 +268,7 @@
                     </svg>
                 </span>
 
-                <div class="mt-4 md:mx-4 md:mt-0">
+                <div class="my-5 md:mx-4 md:mt-0">
                     <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize ">Variable needs</h1>
 
                     <p class="my-3 text-gray-500 ">
@@ -291,7 +291,7 @@
                     </svg>
                 </span>
 
-                <div class="mt-4 md:mx-4 md:mt-0">
+                <div class="my-5 md:mx-4 md:mt-0">
                     <h1 class="lg:text-2xl font-semibold text-gray-700 capitalize ">Indeterminate impact
                     </h1>
 
@@ -307,6 +307,168 @@
     </div>
     </div>
     <!-- 2x2 Square section END-->
+
+
+
+
+    <!-- PROFILE  Container  START -->
+    <!-- PROFILE  Container  START -->
+
+    <div class="mx-auto max-w-2xl text-center sm:py-24">
+        <p class="mt-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Browse Our Mentors
+        </p>
+    </div>
+
+    <div class="flex ">
+        <div class="flex flex-nowrap overflow-auto overflow-y-hidden ">
+            <div class="max-w-s m-10 p-10 flex-shrink-0 flex-grow-0 ">
+                <div
+                    class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
+                    <div class="photo-wrapper p-2">
+                        <img class="mx-auto h-32 h-auto w-32 w-full rounded-full" src="https://unsplash.it/200/200/"
+                            alt="John Doe" />
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-center text-xl font-medium leading-8 text-gray-900">John Doe</h3>
+                        <div class="text-center text-xs font-semibold text-gray-400">
+                            <p>1st year Medical student</p>
+                        </div>
+                        <table class="my-3 text-nowrap">
+                            <tbody>
+                                <tr>
+                                    <td class="px-2 py-2 font-semibold text-gray-500">School</td>
+                                    <td class="px-2 py-2">University of Alberta</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="px-2 py-2 font-semibold text-gray-500">Class of</td>
+                                    <td class="px-2 py-2">2027</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="my-3 text-center">
+                            <a href="/publicprofile" style="background-color:#37355f"
+                                class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">View
+                                Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-s m-10 p-10 flex-shrink-0 flex-grow-0 ">
+                <div
+                    class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
+                    <div class="photo-wrapper p-2">
+                        <img class="mx-auto h-32 h-auto w-32 w-full rounded-full" src="https://unsplash.it/200/200/"
+                            alt="John Doe" />
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-center text-xl font-medium leading-8 text-gray-900">John Doe</h3>
+                        <div class="text-center text-xs font-semibold text-gray-400">
+                            <p>1st year Medical student</p>
+                        </div>
+                        <table class="my-3 text-nowrap">
+                            <tbody>
+                                <tr>
+                                    <td class="px-2 py-2 font-semibold text-gray-500">School</td>
+                                    <td class="px-2 py-2">University of Alberta</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="px-2 py-2 font-semibold text-gray-500">Class of</td>
+                                    <td class="px-2 py-2">2027</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="my-3 text-center">
+                            <a href="/publicprofile" style="background-color:#37355f"
+                                class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">View
+                                Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-s m-10 p-10 flex-shrink-0 flex-grow-0 ">
+                <div
+                    class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
+                    <div class="photo-wrapper p-2">
+                        <img class="mx-auto h-32 h-auto w-32 w-full rounded-full" src="https://unsplash.it/200/200/"
+                            alt="John Doe" />
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-center text-xl font-medium leading-8 text-gray-900">John Doe</h3>
+                        <div class="text-center text-xs font-semibold text-gray-400">
+                            <p>1st year Medical student</p>
+                        </div>
+                        <table class="my-3 text-nowrap">
+                            <tbody>
+                                <tr>
+                                    <td class="px-2 py-2 font-semibold text-gray-500">School</td>
+                                    <td class="px-2 py-2">University of Alberta</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="px-2 py-2 font-semibold text-gray-500">Class of</td>
+                                    <td class="px-2 py-2">2027</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="my-3 text-center">
+                            <a href="/publicprofile" style="background-color:#37355f"
+                                class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">View
+                                Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-s m-10 p-10 flex-shrink-0 flex-grow-0 ">
+                <div
+                    class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
+                    <div class="photo-wrapper p-2">
+                        <img class="mx-auto h-32 h-auto w-32 w-full rounded-full" src="https://unsplash.it/200/200/"
+                            alt="John Doe" />
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-center text-xl font-medium leading-8 text-gray-900">John Doe</h3>
+                        <div class="text-center text-xs font-semibold text-gray-400">
+                            <p>1st year Medical student</p>
+                        </div>
+                        <table class="my-3 text-nowrap">
+                            <tbody>
+                                <tr>
+                                    <td class="px-2 py-2 font-semibold text-gray-500">School</td>
+                                    <td class="px-2 py-2">University of Alberta</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="px-2 py-2 font-semibold text-gray-500">Class of</td>
+                                    <td class="px-2 py-2">2027</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="my-3 text-center">
+                            <a href="/publicprofile" style="background-color:#37355f"
+                                class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">View
+                                Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- PROFILE  Container  END -->
+    <!-- PROFILE  Container  END -->
+
+
 
     <!-- Display Container (not part of component) START -->
     <div class=" mx-auto p-16 sm:p-24 lg:p-48 bg-blue-200">
@@ -340,13 +502,14 @@
 
 
     <!-- Four Card section START -->
-    <div class="container mx-auto bg-white p-4 lg:p-12">
-        ' <div class="mx-auto max-w-2xl lg:text-center">
-            <p class="mb-6 text-3xl font-bold tracking-tight uppercase text-gray-900 sm:text-4xl">Choose what you need
-            </p>
-        </div>
+    <div class="mx-auto max-w-2xl text-center sm:py-24">
+        <p class="mt-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Choose what you need
+        </p>
+    </div>
+
+    <div class="container mx-auto bg-white">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-4 md:grid-cols-2">
-            <div class="overflow-hidden rounded-2xl bg-blue-200 hover:bg-blue-100 hover:bg-blue-100 text-blue-500 p-4 lg:p-12">
+            <div class="overflow-hidden rounded-2xl bg-blue-200 hover:bg-blue-100 text-blue-500 p-4 lg:p-12">
                 <div class="flex items-center ">
                     <p class="text-sm font-bold uppercase">Schedule a MMI session</p>
 
@@ -510,15 +673,17 @@
     <!-- Four Card section END -->
 
     <!-- Mentor/mentee START -->
+    <div class="mx-auto max-w-2xl text-center sm:py-24">
+        <p class="mt-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Mentor or
+            mentee?
+        </p>
+        <p class="mt-5 font-light text-gray-900 sm:text-xl">We're looking for amazing medical students to help their
+            future
+            colleagues across the finish line
+        </p>
+    </div>
+
     <div id="signup" class="flex flex-col bg-white p-4 ">
-        <div class="py-4">
-            <div class="">
-                <div class="mb-6 text-3xl font-bold tracking-tight uppercase text-gray-900 sm:text-4xl">Mentor or
-                    mentee?</div>
-                <div class="py-3 lead-xl font-light ">We're looking for amazing medical students to help their future
-                    colleagues across the finish line </div>
-            </div>
-        </div>
         <div class="flex flex-col md:px-10 ms:px-2 md:flex-row items-center justify-center gap-6">
             <div>
                 <img src="https://cdn.pixabay.com/photo/2019/08/14/09/53/consulting-4405260_1280.jpg"
