@@ -28,7 +28,7 @@
 
 
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <script>document.documentElement.classList.add('js')</script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -65,7 +65,7 @@
 <body class="antialiased">
 
     <div id='navbar' class="">
-        <h1 id='logo' class="px-5">Talk Admissions</h1>
+        <button id='logo' onclick=" window.scrollTo({top: 0, behavior: 'smooth'});" class="px-5">Talk Admissions</button>
         <div class="">
             @if (Route::has('login'))
                 <div class=" fixed top-0 right-0 px-5 py-4 sm:block" style="z-index: 2;">
@@ -114,9 +114,9 @@
                         interviews?</h1>
                     <p class="mt-6 text-lg leading-8 text-gray-600">Connect with the students who've been there</p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
-                        <a href="#signup" style="background-color:#37355f"
+                        <button onclick="document.getElementById('signup').scrollIntoView({ behavior: 'smooth'});" style="background-color:#37355f"
                             class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
-                            started</a>
+                            started</button>
                         <a href="#practice" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span
                                 aria-hidden="true">→</span></a>
                     </div>
@@ -132,10 +132,10 @@
     </div>
 
     <section id="practice" class="bg-white dark:bg-gray-900 mt-24">
-        <div class="container px-6 py-10 mx-auto">
+        <div class="container px-6 py-10 mx-auto delay-[300ms] duration-[1000ms] taos:translate-x-[-400px] taos:invisible" data-taos-offset="100">
 
 
-            <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
+            <div class="mt-8 lg:-mx-6 lg:flex lg:items-center ">
                 <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
                     src="https://www.stockvault.net/data/2016/06/23/202936/preview16.jpg" alt="">
 
@@ -154,14 +154,14 @@
         </div>
     </section>
 
-    <div class="bg-violet-200 py-24 sm:py-32">
+    <div class="bg-violet-200 py-24 sm:py-32 ">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">CHOOSE THE APPROACH THAT IS
                 </p>
             </div>
             <!-- START Three panel section -->
-            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100">
                 <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
                     <div class="relative pl-16">
                         <dt class="text-base lg:text-2xl  font-semibold leading-7 text-gray-900">
@@ -234,7 +234,7 @@
                 Ambitions and Rationale</h1>
         </div>
         <!-- Right: Text -->
-        <div class="px-16 w-full lg:w-1/2 md:w-1/2">
+        <div class="px-16 w-full lg:w-1/2 md:w-1/2 pt-10 delay-[300ms] duration-[1000ms] taos:translate-x-[100%] taos:invisible" data-taos-offset="100">
 
 
             <div class="md:flex md:items-start md:-mx-4">
@@ -315,13 +315,13 @@
     <!-- PROFILE  Container  START -->
 
     <div class="mx-auto max-w-2xl text-center sm:py-24">
-        <p class="mt-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Browse Our Mentors
+        <p class="mt-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">View Our Mentor Profiles 
         </p>
     </div>
 
     <div class="flex ">
         <div class="flex flex-nowrap overflow-auto overflow-y-hidden ">
-            <div class="max-w-s m-10 p-10 flex-shrink-0 flex-grow-0 ">
+            <div class="max-w-s m-10  flex-shrink-0 flex-grow-0 ">
                 <div
                     class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
                     <div class="photo-wrapper p-2">
@@ -355,7 +355,7 @@
                     </div>
                 </div>
             </div>
-            <div class="max-w-s m-10 p-10 flex-shrink-0 flex-grow-0 ">
+            <div class="max-w-s m-10  flex-shrink-0 flex-grow-0 ">
                 <div
                     class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
                     <div class="photo-wrapper p-2">
@@ -389,7 +389,7 @@
                     </div>
                 </div>
             </div>
-            <div class="max-w-s m-10 p-10 flex-shrink-0 flex-grow-0 ">
+            <div class="max-w-s m-10  flex-shrink-0 flex-grow-0 ">
                 <div
                     class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
                     <div class="photo-wrapper p-2">
@@ -423,7 +423,7 @@
                     </div>
                 </div>
             </div>
-            <div class="max-w-s m-10 p-10 flex-shrink-0 flex-grow-0 ">
+            <div class="max-w-s m-10  flex-shrink-0 flex-grow-0 ">
                 <div
                     class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
                     <div class="photo-wrapper p-2">
@@ -474,7 +474,7 @@
     <div class=" mx-auto p-16 sm:p-24 lg:p-48 bg-blue-200">
 
 
-        <div class="relative rounded-lg block md:flex items-center  shadow-xl" style="min-height: 19rem;">
+        <div class="relative rounded-lg block md:flex items-center shadow-xl delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200" style="min-height: 19rem;">
             <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
                 style="min-height: 19rem;">
                 <img class="absolute inset-0 w-full h-full object-cover object-center"
@@ -502,13 +502,13 @@
 
 
     <!-- Four Card section START -->
-    <div class="mx-auto max-w-2xl text-center sm:py-24">
+    <div class="mx-auto max-w-2xl text-center py-24">
         <p class="mt-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Choose what you need
         </p>
     </div>
 
-    <div class="container mx-auto bg-white">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-4 md:grid-cols-2">
+    <div class="container mx-auto bg-white duration-[1000ms] taos:[transform:perspective(2500px)_rotateY(100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="400">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-4 md:grid-cols-2 p-10">
             <div class="overflow-hidden rounded-2xl bg-blue-200 hover:bg-blue-100 text-blue-500 p-4 lg:p-12">
                 <div class="flex items-center ">
                     <p class="text-sm font-bold uppercase">Schedule a MMI session</p>
@@ -683,12 +683,12 @@
         </p>
     </div>
 
-    <div id="signup" class="flex flex-col bg-white p-4 ">
-        <div class="flex flex-col md:px-10 ms:px-2 md:flex-row items-center justify-center gap-6">
-            <div>
+    <div id="signup" class="flex flex-col bg-white p-5 ">
+        <div class="flex flex-col md:px-10 ms:px-2 md:flex-row items-center justify-center gap-10 ">
+            <div class="duration-1000  delay-[300ms] taos:translate-x-[-50%] taos:invisible" data-taos-offset="100">
                 <img src="https://cdn.pixabay.com/photo/2019/08/14/09/53/consulting-4405260_1280.jpg"
                     alt="Featured Image 1" class="rounded-t-xl" />
-                <div class="px-9 pt-10 pb-14   bg-blue-200 hover:bg-blue-100  rounded-b-lg">
+                <div class="px-9 pt-10 pb-14 bg-blue-200 hover:bg-blue-100 rounded-b-lg">
                     <div class="space-y-4">
                         <h3 class="text-xl font-bold lead-xl bold">Are you a medical student?</h3>
                         <div class="text-lg font-light">Join as a mentor to share your experience with your future
@@ -705,7 +705,7 @@
                     </div>
                 </div>
             </div>
-            <div class="">
+            <div class="duration-1000 delay-[300ms]  taos:translate-x-[50%] taos:invisible" data-taos-offset="100">
                 <img src="https://cdn.pixabay.com/photo/2016/02/07/21/03/computer-1185626_1280.jpg"
                     alt="Featured Image 1" class="rounded-t-xl" />
                 <div class="px-9 pt-10 pb-14 bg-violet-200 hover:bg-violet-100 rounded-b-lg">
@@ -765,6 +765,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
 </body>
 
 

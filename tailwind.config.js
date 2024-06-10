@@ -8,6 +8,11 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
+    content: {
+        relative: true,
+        transform: (content) => content.replace(/taos:/g, ''),
+        files: ['./src/*.{html,js}'],
+      },
 
     theme: {
         extend: {
@@ -18,6 +23,13 @@ export default {
     },
 
     plugins: [
-        forms
+        forms,
+        require('taos/plugin')
     ],
+
+    safelist: [
+        '!duration-[0ms]',
+        '!delay-[0ms]',
+        'html.js :where([class*="taos:"]:not(.taos-init))'
+      ]
 };
