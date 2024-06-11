@@ -65,7 +65,8 @@
 <body class="antialiased">
 
     <div id='navbar' class="">
-        <button id='logo' onclick=" window.scrollTo({top: 0, behavior: 'smooth'});" class="px-5">Talk Admissions</button>
+        <button id='logo' onclick=" window.scrollTo({top: 0, behavior: 'smooth'});" class="px-5">Talk
+            Admissions</button>
         <div class="">
             @if (Route::has('login'))
                 <div class=" fixed top-0 right-0 px-5 py-4 sm:block" style="z-index: 2;">
@@ -73,8 +74,25 @@
                         <a href="{{ url('/dashboard') }}" class="px-5">Dashboard</a>
                         <a href="{{ url('/publicprofile') }}" class="px-5">Public Profile</a>
                     @else
-                        <a href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
+                        <a id="login-button" href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
+                        <script>
+                            function loginpage() {
+                                const btn = document.getElementById('login-button');
+                                console.log('login btn ');
+                                btn.click();
+                            }
 
+                            // Add an event listener for 'keydown' events
+                            document.addEventListener('keydown', e => {
+                                // If 'Control' key is held down and the 'l' key is pressed, log out
+                                if (e.altKey && e.key === 'l') {
+                                    // Prevent the default behavior of the 'l' key
+                                    e.preventDefault();
+                                    // Call the logout function
+                                    loginpage();
+                                }
+                            }, false);
+                        </script>
 
                         @if (Route::has('register'))
                             <div class="w3-dropdown-hover w3-right ">
@@ -114,7 +132,8 @@
                         interviews?</h1>
                     <p class="mt-6 text-lg leading-8 text-gray-600">Connect with the students who've been there</p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
-                        <button onclick="document.getElementById('signup').scrollIntoView({ behavior: 'smooth'});" style="background-color:#37355f"
+                        <button onclick="document.getElementById('signup').scrollIntoView({ behavior: 'smooth'});"
+                            style="background-color:#37355f"
                             class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
                             started</button>
                         <a href="#practice" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span
@@ -132,7 +151,8 @@
     </div>
 
     <section id="practice" class="bg-white dark:bg-gray-900 mt-24">
-        <div class="container px-6 py-10 mx-auto delay-[300ms] duration-[1000ms] taos:translate-x-[-400px] taos:invisible" data-taos-offset="100">
+        <div class="container px-6 py-10 mx-auto delay-[300ms] duration-[1000ms] taos:translate-x-[-400px] taos:invisible"
+            data-taos-offset="100">
 
 
             <div class="mt-8 lg:-mx-6 lg:flex lg:items-center ">
@@ -161,7 +181,8 @@
                 </p>
             </div>
             <!-- START Three panel section -->
-            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="100">
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
+                data-taos-offset="100">
                 <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
                     <div class="relative pl-16">
                         <dt class="text-base lg:text-2xl  font-semibold leading-7 text-gray-900">
@@ -234,7 +255,8 @@
                 Ambitions and Rationale</h1>
         </div>
         <!-- Right: Text -->
-        <div class="px-16 w-full lg:w-1/2 md:w-1/2 pt-10 delay-[300ms] duration-[1000ms] taos:translate-x-[100%] taos:invisible" data-taos-offset="100">
+        <div class="px-16 w-full lg:w-1/2 md:w-1/2 pt-10 delay-[300ms] duration-[1000ms] taos:translate-x-[100%] taos:invisible"
+            data-taos-offset="100">
 
 
             <div class="md:flex md:items-start md:-mx-4">
@@ -315,7 +337,7 @@
     <!-- PROFILE  Container  START -->
 
     <div class="mx-auto max-w-2xl text-center sm:py-24">
-        <p class="mt-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">View Our Mentor Profiles 
+        <p class="mt-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">View Our Mentor Profiles
         </p>
     </div>
 
@@ -474,7 +496,8 @@
     <div class=" mx-auto p-16 sm:p-24 lg:p-48 bg-blue-200">
 
 
-        <div class="relative rounded-lg block md:flex items-center shadow-xl delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200" style="min-height: 19rem;">
+        <div class="relative rounded-lg block md:flex items-center shadow-xl delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
+            data-taos-offset="200" style="min-height: 19rem;">
             <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
                 style="min-height: 19rem;">
                 <img class="absolute inset-0 w-full h-full object-cover object-center"
@@ -507,7 +530,8 @@
         </p>
     </div>
 
-    <div class="container mx-auto bg-white duration-[1000ms] taos:[transform:perspective(2500px)_rotateY(100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="400">
+    <div class="container mx-auto bg-white duration-[1000ms] taos:[transform:perspective(2500px)_rotateY(100deg)] taos:invisible taos:[backface-visibility:hidden]"
+        data-taos-offset="400">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-4 md:grid-cols-2 p-10">
             <div class="overflow-hidden rounded-2xl bg-blue-200 hover:bg-blue-100 text-blue-500 p-4 lg:p-12">
                 <div class="flex items-center ">

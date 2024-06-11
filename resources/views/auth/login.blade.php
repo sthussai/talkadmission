@@ -319,7 +319,7 @@
 
                 <div class="row">
                     <input id="email" name="email" type="email" class=""
-                        value="{{ old('email') }}" required>
+                        value="{{ old('email') }}" required autofocus>
                     <label for="email">{{ __('E-Mail')}}</label>
                     @if ($errors->has('email'))
                     <div class="w3-text-red w3-padding-top">
