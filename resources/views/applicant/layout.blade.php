@@ -29,15 +29,15 @@
         @include('applicant.includes.fullscreen_search')
         <!-- Page Heading -->
 
-        <header class="bg-white dark:bg-gray-800 shadow">
+        <header class="bg-violet-200 dark:bg-gray-800 shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            @yield('header')
+                @yield('header')
             </div>
         </header>
 
         <!-- Side bar -->
         <div class="flex flex-row  ">
-            <sidebar class=" w-1/4" >
+            <sidebar class=" w-1/4">
                 @include('applicant.includes.sidebar')
             </sidebar>
 
@@ -50,6 +50,24 @@
 
 
     </div>
+    <script>
+        function logout() {
+            const form = document.getElementById('logout-form');
+            console.log('logout');
+            form.submit();
+        }
+
+        // Add an event listener for 'keydown' events
+        document.addEventListener('keydown', e => {
+            // If 'Control' key is held down and the 'l' key is pressed, log out
+            if (e.altKey && e.key === 'l') {
+                // Prevent the default behavior of the 'l' key
+                e.preventDefault();
+                // Call the logout function
+                logout();
+            }
+        }, false);
+    </script>
 </body>
 
 </html>

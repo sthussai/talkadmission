@@ -23,21 +23,21 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen dark:bg-gray-900">
         @include('mentor.includes.navbar')
         @include('mentor.includes.settings_menu')
         @include('mentor.includes.fullscreen_search')
         <!-- Page Heading -->
 
-        <header class="bg-white dark:bg-gray-800 shadow">
+        <header class="bg-blue-200 dark:bg-gray-800 shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            @yield('header')
+                @yield('header')
             </div>
         </header>
 
         <!-- Side bar -->
         <div class="flex flex-row  ">
-            <sidebar class=" w-1/4" >
+            <sidebar class=" w-1/4">
                 @include('mentor.includes.sidebar')
             </sidebar>
 
@@ -46,10 +46,31 @@
             <main class=" bg-gray-100 text-gray-700 w-full">
                 @yield('body')
             </main>
+
+
+
         </div>
 
 
     </div>
+    <script>
+        function logout() {
+            const form = document.getElementById('logout-form');
+            console.log('logout');
+            form.submit();
+        }
+
+        // Add an event listener for 'keydown' events
+        document.addEventListener('keydown', e => {
+            // If 'Control' key is held down and the 'l' key is pressed, log out
+            if (e.altKey && e.key === 'l') {
+                // Prevent the default behavior of the 'l' key
+                e.preventDefault();
+                // Call the logout function
+                logout();
+            }
+        }, false);
+    </script>
 </body>
 
 </html>

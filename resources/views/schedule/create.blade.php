@@ -1,17 +1,10 @@
-@extends("appointments.layout")
+@extends("schedule.index")
 
 
 
 @section('content1')
 
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css"
-    rel="stylesheet">
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
   <form action="/appointments" method='POST' class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
     {{ csrf_field() }}
@@ -63,14 +56,6 @@
     </div>
 
 </div>
-
-<script type="text/javascript">
-  $('.date').datepicker({
-
-    format: 'mm-dd-yyyy'
-
-  });
-</script>
 
 
 <p class="w3-center">

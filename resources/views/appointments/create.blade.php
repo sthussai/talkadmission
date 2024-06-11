@@ -1,4 +1,4 @@
-@extends("appointments.layout")
+@extends("appointments.index")
 
 
 

@@ -26,12 +26,12 @@ class MediaController extends Controller
         if ($usertype == 'applicant') {
             $user = Auth()->user()->userable;
             $mediaItems = $user->getMedia("avatar");
-            return view("applicant.upload", compact('mediaItems'));
+            return view("media.upload", compact('mediaItems'));
         }
         if ($usertype == 'mentor') {
             $user = Auth()->user()->userable;
             $mediaItems = $user->getMedia("avatar");
-            return view("mentor.upload", compact('mediaItems'));
+            return view("media.upload", compact('mediaItems'));
         }
 
         return redirect()->back();

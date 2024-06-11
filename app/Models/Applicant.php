@@ -30,7 +30,7 @@ class Applicant extends Model implements HasMedia
         static::created(function ($applicant) {
                 $user = User::latest()->first();
                 $user->userable_id = $applicant->id;
-                $user->userable_type = 'App\Models\Appicant';
+                $user->userable_type = 'App\Models\Applicant';
                 $user->save();            
         });
     }

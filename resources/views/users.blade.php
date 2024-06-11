@@ -298,6 +298,8 @@
                 <div class="card w3-padding-16" style="border: none;">
                     <div>
                         <h2 style="margin:0px;border:  2px blue;">{{$mentor->name}}</h2>
+                        <img src="{{$mentor->avatar_url}}" class="w3-circle "
+                style=" width:85px">
                         <h4 class="w3-medium" style="margin:0 0 40px; border:  2px green;">ID: {{$mentor->id}}</h4>
                         <i class="fa fa-star w3-margin-bottom w3-text-theme" style="font-size:20px"></i>
                         <i class="fa fa-star w3-margin-bottom w3-text-theme" style="font-size:20px"></i>
