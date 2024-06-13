@@ -50,7 +50,15 @@ class User extends Authenticatable implements HasMedia
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function chats()
+    {
+        return $this->belongsTo(Chat::class);
+    }
 
+    protected function serializeDate($date) : string
+    {
+        return $date->format('h:i:s a m/d/Y');
+    }
     protected static function boot()
     {
         parent::boot();

@@ -50,7 +50,6 @@ Route::get('/home', [DashboardController::class, 'index'])->middleware(['auth', 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
-
 Route::get('/media', [MediaController::class, 'index'])->name('media');
 Route::post('/media', [MediaController::class, 'store'])->name('storeMedia');
 Route::post('/addavatar', [MediaController::class, 'update'])->name('addAvatar');
@@ -66,9 +65,8 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-
-
 Route::get('/inbox', function () {
+    App\Events\TestNotification::dispatch('This is a inbox notification via web file');
     return view('inbox.index');
 });
 

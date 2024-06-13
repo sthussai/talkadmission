@@ -32,7 +32,6 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-
     <style>
         /* Create a sticky/fixed navbar */
         #navbar {

@@ -17,6 +17,9 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
 
 <style>
     body,
@@ -249,7 +252,7 @@
                 <div class="w3-container w3-col l8 s6 ">Applicant Id: {{$applicant->id }} <br>
                     <b>Name: {{$applicant->name}}</b>
                     <br>Email: {{$applicant->email}} <br>
-                    Status:<span class="w3-text-dark-gray">Offline</span>
+                    Status:<div id="{{$applicant->name}}" class="w3-text-dark-gray">{{$applicant->status}} </div>
 
                 </div>
 
@@ -298,6 +301,8 @@
                 <div class="card w3-padding-16" style="border: none;">
                     <div>
                         <h2 style="margin:0px;border:  2px blue;">{{$mentor->name}}</h2>
+                        <br>
+                        Status:<div id="{{$mentor->name}}" class="w3-text-dark-gray">{{$mentor->status}} </div>
                         <img src="{{$mentor->avatar_url}}" class="w3-circle "
                 style=" width:85px">
                         <h4 class="w3-medium" style="margin:0 0 40px; border:  2px green;">ID: {{$mentor->id}}</h4>

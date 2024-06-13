@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\MentorController;
+use App\Events\SendMessageEvent;
 
 class MediaController extends Controller
 {
@@ -22,6 +23,7 @@ class MediaController extends Controller
     public function index()
     {
         $usertype = Auth()->user()->usertype;
+        SendMessageEvent::dispatch('This is a chat notification via media controller');
 
         if ($usertype == 'applicant') {
             $user = Auth()->user()->userable;
