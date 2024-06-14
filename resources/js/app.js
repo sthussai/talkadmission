@@ -20,6 +20,7 @@ Echo.channel('users').listen('UserLoggedIn', function(e) {
   const userDiv = document.getElementById(`${e.user.name}`);
   if (userDiv) {
       userDiv.innerText = `Online`;
+      userDiv.style.color = "green";
   }  
   
 });
@@ -30,6 +31,7 @@ Echo.channel('users').listen('UserLoggedOut', function(e) {
   const userDiv = document.getElementById(`${e.user.name}`);
   if (userDiv) {
       userDiv.innerText = `Offline`;
+      userDiv.style.color = "red";
   }  
   
 });

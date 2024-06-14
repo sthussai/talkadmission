@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InboxController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\DashboardController;
@@ -64,11 +65,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
-Route::get('/inbox', function () {
-    App\Events\TestNotification::dispatch('This is a inbox notification via web file');
-    return view('inbox.index');
-});
+Route::get('/inbox', [InboxController::class, 'index'])->name('inbox');
 
 /* Ajax user search controller */
 Route::get('/search', [SearchUsersController::class, 'search']);

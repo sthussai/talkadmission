@@ -252,7 +252,7 @@
                 <div class="w3-container w3-col l8 s6 ">Applicant Id: {{$applicant->id }} <br>
                     <b>Name: {{$applicant->name}}</b>
                     <br>Email: {{$applicant->email}} <br>
-                    Status:<div id="{{$applicant->name}}" class="w3-text-dark-gray">{{$applicant->status}} </div>
+                    Status:<div id="{{$applicant->name}}" class="status">{{$applicant->status}} </div>
 
                 </div>
 
@@ -302,7 +302,7 @@
                     <div>
                         <h2 style="margin:0px;border:  2px blue;">{{$mentor->name}}</h2>
                         <br>
-                        Status:<div id="{{$mentor->name}}" class="w3-text-dark-gray">{{$mentor->status}} </div>
+                        Status:<div id="{{$mentor->name}}" class="status">{{$mentor->status}} </div>
                         <img src="{{$mentor->avatar_url}}" class="w3-circle "
                 style=" width:85px">
                         <h4 class="w3-medium" style="margin:0 0 40px; border:  2px green;">ID: {{$mentor->id}}</h4>
@@ -328,7 +328,17 @@
         @endisset
         <!-- END - Review section panel -->
     </div>
+<script>
+    const status = document.getElementsByClassName("status");
+    for (let each of status) {
+    console.log(each.innerText);
+    if(each.innerText == 'Online') {each.style.color ="green"}
+    else{each.style.color ="red"}
+}
+    console.log(status);
 
+ 
+</script>
     <!--  End of Reviews Section  -->
 
 
