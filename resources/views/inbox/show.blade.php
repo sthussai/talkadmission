@@ -79,10 +79,11 @@
       <li class="py-5 border-b px-3 transition hover:bg-indigo-100">
       <a href="/inbox/{{auth()->user()->id}}/chat/{{$chat->id}}" class="flex justify-between items-center">
         <h3 class="text-lg font-semibold">{{$chat->to_username}}</h3>
-        <p class="text-md text-gray-400">23m ago</p><br>
+        <p class="text-md text-gray-400">23m ago</p>
       </a>
+      <div class="text-md italic text-gray-400">You have been invited!</div>
       </li>
-      <form action="{{ route('inbox.id',auth()->user()->id) }}" method="GET" enctype="multipart/form-data">
+      <form action="{{ route('inbox.id', auth()->user()->id) }}" method="GET" enctype="multipart/form-data">
       <input type="text" name="id" value="{{ $user->id }}" hidden>
       @csrf
       <x-primary-button type="submit" class="w3-red ">Delete</x-primary-button>
@@ -140,6 +141,36 @@
         </ul>
       </div>
     </div>
+    <section>
+      <h1 class="font-bold text-2xl">{{$Chat->to_username}}</h1>
+      @foreach ($messages as $message)
+      @if ($message->from_user == auth()->user()->id)
+      <article class="mt-8 text-gray-500 leading-7 tracking-wider text-right">
+        <p>{{$message->content}}</p>
+        <div class="text-md italic text-gray-400">{{auth()->user()->name}}</div>
+    @else
+      <article class="mt-8 text-gray-500 leading-7 tracking-wider text-left">
+      <p>{{$message->content}}</p>
+      <div class="text-md italic text-gray-400">{{$Chat->to_username}}</div>
+  @endif
+    @endforeach
+    </section>
+    <section class="mt-6 border rounded-xl bg-gray-50 mb-3">
+      <form action="{{ route('messages.store') }}" method="POST" enctype="multipart/form-data">
+        <input type="text" name="from_user" value="{{ $user->id }}" hidden>
+        <input type="text" name="to_user" value="{{ $to_users[0]->id }}" hidden>
+        <input type="text" name="chat_id" value="{{ 1 }}" hidden>
+        @csrf
+        <input name="content" class="w-full bg-gray-50 p-2 rounded-xl" placeholder="Type your reply here..." rows="3"
+          type="text"></>
+        <div class="flex items-center justify-between p-2">
+
+          <button type="submit" class="bg-purple-600 text-white px-6 py-2 rounded-xl">Reply</button>
+        </div>
+
+      </form>
+
+    </section>
     @if ($errors->any())
     <div class="alert alert-danger">
       <ul>

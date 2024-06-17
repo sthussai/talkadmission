@@ -342,142 +342,45 @@
 
     <div class="flex ">
         <div class="flex flex-nowrap overflow-auto overflow-y-hidden ">
-            <div class="max-w-s m-10  flex-shrink-0 flex-grow-0 ">
-                <div
-                    class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
-                    <div class="photo-wrapper p-2">
-                        <img class="mx-auto h-32 h-auto w-32 w-full rounded-full" src="https://unsplash.it/200/200/"
-                            alt="John Doe" />
-                    </div>
-                    <div class="p-2">
-                        <h3 class="text-center text-xl font-medium leading-8 text-gray-900">John Doe</h3>
-                        <div class="text-center text-xs font-semibold text-gray-400">
-                            <p>1st year Medical student</p>
-                        </div>
-                        <table class="my-3 text-nowrap">
-                            <tbody>
-                                <tr>
-                                    <td class="px-2 py-2 font-semibold text-gray-500">School</td>
-                                    <td class="px-2 py-2">University of Alberta</td>
-                                </tr>
 
-                                <tr>
-                                    <td class="px-2 py-2 font-semibold text-gray-500">Class of</td>
-                                    <td class="px-2 py-2">2027</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            @foreach ($portfolios as $portfolio)
+                <div class="max-w-s m-10  flex-shrink-0 flex-grow-0 ">
+                    <div
+                        class="rounded-lg bg-white py-3 px-10 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
+                        <div class="photo-wrapper p-2">
+                            <img class="mx-auto h-32 h-auto w-32 w-full rounded-full" src="https://unsplash.it/200/200/"
+                                alt="John Doe" />
+                        </div>
+                        <div class="p-2">
+                            <h3 class="text-center text-xl font-medium leading-8 text-gray-900">
+                                {{$portfolio->name ?? 'John Doe'}}</h3>
+                            <div class="text-center text-xs font-semibold text-gray-400">
+                                <p>{{$portfolio->year_of_study ?? 'First year'}}</p>
+                            </div>
+                            <table class="my-3 text-nowrap">
+                                <tbody>
+                                    <tr>
+                                        <td class="px-2 py-2 font-semibold text-gray-500">School</td>
+                                        <td class="px-2 py-2">{{$portfolio->med_school ?? 'Not entered'}}</td>
+                                    </tr>
 
-                        <div class="my-3 text-center">
-                            <a href="/publicprofile" style="background-color:#37355f"
-                                class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">View
-                                Profile</a>
+                                    <tr>
+                                        <td class="px-2 py-2 font-semibold text-gray-500">Class of</td>
+                                        <td class="px-2 py-2">{{$portfolio->class_of ?? 'Not entered'}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="my-3 text-center">
+                                <a href="/portfolio/{{$portfolio->user_id}}" style="background-color:#37355f"
+                                    class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">View
+                                    Profile</a>
+                            </div>
                         </div>
                     </div>
+
                 </div>
-            </div>
-            <div class="max-w-s m-10  flex-shrink-0 flex-grow-0 ">
-                <div
-                    class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
-                    <div class="photo-wrapper p-2">
-                        <img class="mx-auto h-32 h-auto w-32 w-full rounded-full" src="https://unsplash.it/200/200/"
-                            alt="John Doe" />
-                    </div>
-                    <div class="p-2">
-                        <h3 class="text-center text-xl font-medium leading-8 text-gray-900">John Doe</h3>
-                        <div class="text-center text-xs font-semibold text-gray-400">
-                            <p>1st year Medical student</p>
-                        </div>
-                        <table class="my-3 text-nowrap">
-                            <tbody>
-                                <tr>
-                                    <td class="px-2 py-2 font-semibold text-gray-500">School</td>
-                                    <td class="px-2 py-2">University of Alberta</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="px-2 py-2 font-semibold text-gray-500">Class of</td>
-                                    <td class="px-2 py-2">2027</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="my-3 text-center">
-                            <a href="/publicprofile" style="background-color:#37355f"
-                                class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">View
-                                Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="max-w-s m-10  flex-shrink-0 flex-grow-0 ">
-                <div
-                    class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
-                    <div class="photo-wrapper p-2">
-                        <img class="mx-auto h-32 h-auto w-32 w-full rounded-full" src="https://unsplash.it/200/200/"
-                            alt="John Doe" />
-                    </div>
-                    <div class="p-2">
-                        <h3 class="text-center text-xl font-medium leading-8 text-gray-900">John Doe</h3>
-                        <div class="text-center text-xs font-semibold text-gray-400">
-                            <p>1st year Medical student</p>
-                        </div>
-                        <table class="my-3 text-nowrap">
-                            <tbody>
-                                <tr>
-                                    <td class="px-2 py-2 font-semibold text-gray-500">School</td>
-                                    <td class="px-2 py-2">University of Alberta</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="px-2 py-2 font-semibold text-gray-500">Class of</td>
-                                    <td class="px-2 py-2">2027</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="my-3 text-center">
-                            <a href="/publicprofile" style="background-color:#37355f"
-                                class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">View
-                                Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="max-w-s m-10  flex-shrink-0 flex-grow-0 ">
-                <div
-                    class="rounded-lg bg-white py-3 shadow-lg transition duration-700 hover:scale-110 hover:shadow-2xl">
-                    <div class="photo-wrapper p-2">
-                        <img class="mx-auto h-32 h-auto w-32 w-full rounded-full" src="https://unsplash.it/200/200/"
-                            alt="John Doe" />
-                    </div>
-                    <div class="p-2">
-                        <h3 class="text-center text-xl font-medium leading-8 text-gray-900">John Doe</h3>
-                        <div class="text-center text-xs font-semibold text-gray-400">
-                            <p>1st year Medical student</p>
-                        </div>
-                        <table class="my-3 text-nowrap">
-                            <tbody>
-                                <tr>
-                                    <td class="px-2 py-2 font-semibold text-gray-500">School</td>
-                                    <td class="px-2 py-2">University of Alberta</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="px-2 py-2 font-semibold text-gray-500">Class of</td>
-                                    <td class="px-2 py-2">2027</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="my-3 text-center">
-                            <a href="/publicprofile" style="background-color:#37355f"
-                                class="rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">View
-                                Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 

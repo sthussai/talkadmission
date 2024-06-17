@@ -10,8 +10,9 @@ Alpine.start();
 Echo.channel('notification').listen('TestNotification', function(data) {
   console.log(JSON.stringify(data));
 });
-Echo.channel('chat').listen('SendMessageEvent', function(data) {
-  console.log(JSON.stringify(data));
+Echo.channel('chat').listen('SendMessageEvent', function(message, user) {
+  console.log(JSON.stringify(message));
+  console.log(JSON.stringify(user));
 });
 Echo.channel('users').listen('UserLoggedIn', function(e) {
   console.log('user logged in '); 

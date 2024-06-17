@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
 
 //        $this->call(UsersTableSeeder::class);   
         $this->call(PortfolioSeeder::class);   
+//        $this->call(ChatSeeder::class);   
+//        $this->call(MessageSeeder::class);   
         //$this->call(ApplicantSeeder::class);   
 //        $this->call(MentorSeeder::class);   
 

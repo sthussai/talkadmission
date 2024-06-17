@@ -330,13 +330,10 @@
     </div>
 <script>
     const status = document.getElementsByClassName("status");
-    for (let each of status) {
-    console.log(each.innerText);
-    if(each.innerText == 'Online') {each.style.color ="green"}
-    else{each.style.color ="red"}
+    for (let eachdiv of status) {
+    if(eachdiv.innerText == 'Online') {eachdiv.style.color ="green"}
+    else{eachdiv.style.color ="red"}
 }
-    console.log(status);
-
  
 </script>
     <!--  End of Reviews Section  -->

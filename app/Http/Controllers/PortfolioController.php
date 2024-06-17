@@ -10,8 +10,8 @@ class PortfolioController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('verified');
+        $this->middleware('auth')->except(['show']);
+        $this->middleware('verified')->except(['show']);
 
     }
 
@@ -45,7 +45,8 @@ class PortfolioController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $portfolio = Portfolio::where('user_id',$id)->firstOrFail();
+        return view("portfolio.show", compact('portfolio'));
     }
 
     /**

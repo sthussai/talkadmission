@@ -64,34 +64,33 @@
 <body class="antialiased">
 
     <div id='navbar' class="w3-opacity-min">
-        <h1 id='logo'>Talk Admission</h1>
+        <a href="/" id='logo'>Talk Admission</a>
         <div class="">
             @if (Route::has('login'))
-            <div class=" fixed top-0 right-0 px-6 py-4 sm:block" style="z-index: 2;">
-                @auth
-                <a href="{{ url('/dashboard') }}" class="">Dashboard</a>
-                @else
-                <a href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
+                <div class=" fixed top-0 right-0 px-6 py-4 sm:block" style="z-index: 2;">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="w3-right w3-button w3-small">Log in</a>
 
 
-                @if (Route::has('register'))
-                <div class="w3-dropdown-hover w3-right ">
-                    <button class="w3-bar-item w3-right w3-button w3-small " title="Registrations">Register</button>
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-small"
-                        style="width:150px; margin-top:30px">
-                        <a href="/mentorregister" class="w3-bar-item w3-right w3-button w3-small ">Mentor</a>
-                        <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Applicant</a>
-                        <a href="/users" class="w3-bar-item w3-right w3-button w3-small ">Users</a>
-                    </div>
+                        @if (Route::has('register'))
+                            <div class="w3-dropdown-hover w3-right ">
+                                <button class="w3-bar-item w3-right w3-button w3-small " title="Registrations">Register</button>
+                                <div class="w3-dropdown-content w3-card-4 w3-bar-block w3-small"
+                                    style="width:150px; margin-top:30px">
+                                    <a href="/mentorregister" class="w3-bar-item w3-right w3-button w3-small ">Mentor</a>
+                                    <a href="/applicantregister" class="w3-bar-item w3-right w3-button w3-small ">Applicant</a>
+                                    <a href="/users" class="w3-bar-item w3-right w3-button w3-small ">Users</a>
+                                </div>
+                            </div>
+                            <!--  END Top Right Registation dropdown -->
+                        @endif
+                    @endauth
                 </div>
-                <!--  END Top Right Registation dropdown -->
-                @endif
-                @endauth
-            </div>
             @endif
         </div>
     </div>
-
 
     <div class="max-w-[800px] mx-auto flex items-center justify-center min-h-screen m-4 mt-40 text-[#ecebf0]">
         <div
@@ -165,12 +164,13 @@
             </div>
             <div class="flex flex-col items-center -mt-20">
                 <a href="" target="_blank" class="">
-                    <img src="https://talkadmission.com//storage/8/male-306408_640.png"
-                        class="w-40 border-6 border-white rounded-full backdrop-blur-md shadow-[0px_27px_16px_-11px_rgba(31,27,56,0.25)] transition-all duration-150 ease-in hover:scale-105 cursor-pointer slide-in-elliptic-top-fwd">
+                <img class="mx-auto h-32 h-auto w-32 w-full rounded-full" src="https://fastly.picsum.photos/id/321/200/200.jpg?hmac=V8qQPhFl_8KjI8JgGI74LQepgBOnxdXOuZmBclxHU90"
+                                alt="John Doe" />
+
                 </a>
-                <h1 class="text-xl font-bold text-center">{{auth()->user()->name ?? 'John Doe'}}</h1>
-                <p class="block my-1 text-center">First year medical student</p>
-                <p class="mt-5 text-center">University of Alberta</p>
+                <h1 class="text-xl font-bold text-center">{{$portfolio->name ?? 'John Doe'}}</h1>
+                <p class="block my-1 text-center">{{$portfolio->year_of_study ?? 'First year '}}</p>
+                <p class="mt-5 text-center">{{$portfolio->med_school ?? 'Not entered '}}</p>
             </div>
 
             <div class="flex flex-row items-center  justify-center gap-2 mx-auto mt-5 mb-10">
@@ -190,23 +190,24 @@
                         <ul class="mt-2 text-gray-700">
                             <li class="flex border-y py-2">
                                 <span class="font-bold mr-2">Previous Degree(s): </span>
-                                <span class="text-gray-700">Bsc Biological Sciences</span>
+                                <span class="text-gray-700">{{$portfolio->previous_degree ?? 'Not entered '}}</span>
                             </li>
                             <li class="flex border-b py-2">
                                 <span class="font-bold mr-2">MMIs attended as pre-med:</span>
-                                <span class="text-gray-700">5</span>
+                                <span class="text-gray-700">{{$portfolio->mmis_attended ?? 'Not entered '}}</span>
                             </li>
                             <li class="flex border-b py-2">
                                 <span class="font-bold mr-2">MMIs as an interviewer:</span>
-                                <span class="text-gray-700">1</span>
+                                <span class="text-gray-700">{{$portfolio->mmis_interviewed ?? 'Not entered '}}</span>
                             </li>
                             <li class="flex border-b py-2">
                                 <span class="font-bold mr-2">Mentorship experience:</span>
-                                <span class="text-gray-700">Formal and informal</span>
+                                <span
+                                    class="text-gray-700">{{$portfolio->mentorship_experience ?? 'Not entered '}}</span>
                             </li>
                             <li class="flex border-b py-2">
                                 <span class="font-bold mr-2">Applicants helped:</span>
-                                <span class="text-gray-700">Several</span>
+                                <span class="text-gray-700">{{$portfolio->applicants_helped ?? 'Not entered '}}</span>
                             </li>
 
                         </ul>
@@ -215,8 +216,9 @@
                     <div class="bg-gray-100 text-gray-600 p-4 text-sm font-semibold backdrop-blur-sm">
                         <p class="my-2 uppercase">About</p>
                         <p class="text leading-7">
-                            Hey, I am a first year med student at UofA. If you have questions about medical school
-                            and/or practicing for medical school interviews, feel free to reach out!
+                            {{$portfolio->about ?? 'Hey, I am a first year med student at UofA. If you have questions about medical school
+                            and/or practicing for medical school interviews, feel free to reach out!'}}
+
                         </p>
                     </div>
                     <div class="bg-[#1e1a36]/70 p-4 text-sm font-semibold backdrop-blur-sm">

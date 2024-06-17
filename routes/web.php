@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InboxController;
+use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\DashboardController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SearchUsersController;
 use App\Models\Applicant;
 use App\Models\Appointment;
+use App\Models\Mentor;
 use App\Models\Portfolio;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\UserIsApplicant;
@@ -32,13 +34,13 @@ use App\Http\Middleware\UserIsMentor;
 Route::resource('appointments', AppointmentController::class);
 Route::resource('schedule', ScheduleController::class);
 Route::resource('portfolio', PortfolioController::class);
+Route::resource('messages', MessagesController::class);
 
 Route::get('/', function () {
-    return view('welcome');
+    $portfolios = Portfolio::all();
+    return view('welcome', compact('portfolios'));
 })->name('welcome');
-Route::get('/back', function () {
-    return redirect()->route('dashboard');
-});
+
 Route::get('/mentorregister', function () {
     return view('auth.mentor-register');
 });
@@ -65,7 +67,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/inbox', [InboxController::class, 'index'])->name('inbox');
+Route::get('/inbox/{id}', [InboxController::class, 'index'])->name('inbox.id');
+Route::get('/inbox/{id}/chat/{chatId}', [InboxController::class, 'show'])->name('chat.id');
 
 /* Ajax user search controller */
 Route::get('/search', [SearchUsersController::class, 'search']);

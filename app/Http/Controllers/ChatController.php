@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class ChatController extends Controller
 {
+    public function view(Request $request){
+
+    }
     public function SendMessage(SendMessageRequest $request)
     {
         if ($request->to == auth("sanctum")->user()->name){

@@ -2,58 +2,78 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chat;
+use App\Events\SendMessageEvent;
 use App\Models\Message;
 use Illuminate\Http\Request;
 
 class MessagesController extends Controller
 {
-
-    public function LoadThePreviousMessages(Request $request)
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
+        //
+    }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
 
-        /*
-         *
-         * loading if the request has id of both sender and reciever
-         *
-         * */
-        return Message::where(function($query) use ($request) {
-            $query->where('from_user', auth("sanctum")->user()->id)->where('to_user', $request->other);
-        })->orWhere(function ($query) use ($request) {
-            $query->where('from_user', $request->other)->where('to_user', auth("sanctum")->user()->id);
-        })->orderBy('created_at', 'ASC')->limit(10)->get();
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'chat_id' => 'required',
+            'from_user' => 'required',
+            'to_user' => 'required',
+            'content' => 'required',
+        ]);   
+        if($validated){
+            $message = new Message;
+            $input = $request->all();
+            $message->fill($input)->save();
+            SendMessageEvent::dispatch($message, auth()->user());
+        }
+        return back();
+        
+    }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
 
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
 
-        /*
-         * loading if the chat_id is only in the request
-         * */
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
 
-        return Chat::where("id",$request->chat_id)->with(["messages" => function($q) use ($request){
-            $q->where("messages.chat_id",$request->chat_id)->orderBy("id", "asc");
-        }])->get();
-
-        /*
-         *
-         * loading with scrolling
-         *
-         * **/
-
-//        if(!$request->old_message_id || !$request->to_user)
-//            return;
-//        $message = Message::find($request->old_message_id);
-//        $lastMessages = Message::where(function($query) use ($request, $message) {
-//            $query->where('from_user', Auth::user()->id)
-//                ->where('to_user', $request->to_user)
-//                ->where('created_at', '<', $message->created_at);
-//        })
-//            ->orWhere(function ($query) use ($request, $message) {
-//                $query->where('from_user', $request->to_user)
-//                    ->where('to_user', Auth::user()->id)
-//                    ->where('created_at', '<', $message->created_at);
-//            })
-//            ->orderBy('created_at', 'ASC')->limit(10)->get();
-
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
     }
 }
