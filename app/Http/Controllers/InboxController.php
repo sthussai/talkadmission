@@ -17,42 +17,63 @@ class InboxController extends Controller
     public function index(Request $request){
         if(Auth()->user()->id !=$request->id){
             abort(401);
-        }
-        $user = Auth()->user();
-        $chats = Chat::where('user_id', $user->id)->get();
+        }   
+        $chats = Chat::where('from_userid', auth()->user()->id)->orWhere('to_userid', auth()->user()->id)->get();
         $chats = $chats->map(function ($chat) {
-            $user = User::find($chat->to_user); // Retrieve the user
-            $chat->to_username = $user->name; // Add the username property
-            return $chat;
-        });
-        $chatIds = $chats->pluck('id');
-        $messages = Message::whereIn('chat_id', $chatIds)->get();
-        $messagesByChatId = $messages->groupBy('chat_id');
-        $to_users_ids = $chats->pluck('to_user');
-        $to_users = User::whereIn('id', $to_users_ids )->get();
-        return view("inbox.index", compact('user','to_users','chats', 'messagesByChatId', 'messages'));
+            $from_user = User::find($chat->from_userid); // Retrieve the user using from_user
+            $chat->from_username = $from_user->name; // Add the username property
+            $to_user = User::find($chat->to_userid); // Retrieve the user using to_user
+            $chat->to_username = $to_user->name; // Add the username property
+                if(auth()->user()->name == $chat->from_username){
+                $chat->from_username = 'You'; // Add the username property
+                return $chat;
+            }
+            if(auth()->user()->name == $chat->to_username){
+                $chat->to_username = 'You'; // Add the username property
+                return $chat;          
+            } 
+                       
+            });
+ 
+        return view("inbox.index", compact('chats'));
     }
+
     public function show(Request $request){
         if(Auth()->user()->id !=$request->id){
             abort(401);
         }
-        $chatId = $request->chatId;
-        $user = Auth()->user();
-        $Chat = Chat::where('id', $chatId)->first();
-        $to_user = User::find($Chat->to_user); // Retrieve the user
+        $Chat = Chat::where('id', $request->chatId)->first();
+        $from_user = User::find($Chat->from_userid); // Retrieve the user using from_user
+        $Chat->from_username = $from_user->name; // Add the username property
+        $to_user = User::find($Chat->to_userid); // Retrieve the user using to_user
         $Chat->to_username = $to_user->name; // Add the username property
-        //dd($chat->to_username);
-
-        $chats = Chat::where('user_id', $user->id)->get();
+            if(auth()->user()->name == $Chat->from_username){
+            $Chat->from_username = 'You'; // Add the username property
+        }
+        if(auth()->user()->name == $Chat->to_username){
+            $Chat->to_username = 'You'; // Add the username property
+        } 
+        $messages = Message::where('chat_id', $request->chatId)->get();
+        
+        $chats = Chat::where('from_userid', auth()->user()->id)->orWhere('to_userid', auth()->user()->id)->get(); 
         $chats = $chats->map(function ($chat) {
-            $user = User::find($chat->to_user); // Retrieve the user
-            $chat->to_username = $user->name; // Add the username property
-            return $chat;
-        });
-        $chatIds = $chats->pluck('id');
-        $messages = Message::where('chat_id', $chatId)->get();
-        $to_users_ids = $chats->pluck('to_user');
-        $to_users = User::whereIn('id', $to_users_ids )->get();
-        return view("inbox.show", compact('user','to_users','chats','chatId', 'messages', 'Chat'));
+            $from_user = User::find($chat->from_userid); // Retrieve the user using from_user
+            $chat->from_username = $from_user->name; // Add the username property
+            $to_user = User::find($chat->to_userid); // Retrieve the user using to_user
+            $chat->to_username = $to_user->name; // Add the username property
+                if(auth()->user()->name == $chat->from_username){
+                $chat->from_username = 'You'; // Add the username property
+                return $chat;
+            }
+            if(auth()->user()->name == $chat->to_username){
+                $chat->to_username = 'You'; // Add the username property
+                return $chat;          
+            } 
+                       
+            });
+      
+//        $user = auth()->user();
+
+        return view("inbox.show", compact('chats', 'messages', 'Chat'));
     }
 }

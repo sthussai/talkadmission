@@ -14,9 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('chats', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId("user_id")->references("id")->on("users");
-            $table->integer("to_user");
+            $table->id();   
+            $table->foreignId("from_userid")->references("id")->on("users");
+            $table->integer("to_userid")->references("id")->on("users");
+            $table->index(['from_userid','to_userid'], 'chat_name');   
+            $table->unique(['from_userid','to_userid']);
+            $table->boolean("seen")->default(false);
             $table->timestamps();
         });
     }

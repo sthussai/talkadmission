@@ -14,20 +14,20 @@ class ChatSeeder extends Seeder
     public function run(): void
     {
         Chat::create([
-            'user_id' => '3',
-            'to_user' => '1'
+            'from_userid' => '3',
+            'to_userid' => '1'
         ]);
         Chat::create([
-            'user_id' => '3',
-            'to_user' => '2'
+            'from_userid' => '3',
+            'to_userid' => '2'
         ]);
         Chat::create([
-            'user_id' => '1',
-            'to_user' => '2'
+            'from_userid' => '1',
+            'to_userid' => '2'
         ]);
         Chat::create([
-            'user_id' => '1',
-            'to_user' => '3'
+            'from_userid' => '1',
+            'to_userid' => '3'
         ]);
     }
 }
