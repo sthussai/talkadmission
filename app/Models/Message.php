@@ -2,26 +2,25 @@
 
 namespace App\Models;
 
-use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Message extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    public $table = 'messages';
+    protected $fillable = ['id', 'user_id', 'text'];
 
-    protected $hidden = [
-        'created_at',
-        'updated_at',
-    ];
-    protected function serializeDate(DateTimeInterface $date) : string
-    {
-        return $date->format('h:i:s a m/d/Y');
+    public function user(): BelongsTo {
+        return $this->belongsTo(User::class, 'user_id');
     }
-    public function chat()
-    {
-        return $this->belongsTo(Chat::class);
+
+    public function getTimeAttribute(): string {
+        return date(
+            "d M Y, H:i:s",
+            strtotime($this->attributes['created_at'])
+        );
     }
 }

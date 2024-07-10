@@ -84,7 +84,7 @@
                             // Add an event listener for 'keydown' events
                             document.addEventListener('keydown', e => {
                                 // If 'Control' key is held down and the 'l' key is pressed, log out
-                                if (e.altKey && e.key === 'l') {
+                                if (e.iny && e.key === 'l') {
                                     // Prevent the default behavior of the 'l' key
                                     e.preventDefault();
                                     // Call the logout function

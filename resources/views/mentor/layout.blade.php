@@ -71,6 +71,57 @@
                 logout();
             }
         }, false);
+        // Add an event listener for 'keydown' events for appointments
+        document.addEventListener('keydown', e => {
+            // If 'Control' key is held down and the 'a' key is pressed, log out
+            if (e.altKey && e.key === 'a') {
+                // Prevent the default behavior of the 'a' key
+                e.preventDefault();
+                // Call the logout function
+                window.location.href = '/appointments';
+            }
+        }, false);
+        // Add an event listener for 'keydown' events for schedule
+        document.addEventListener('keydown', e => {
+            // If 'Control' key is held down and the 'a' key is pressed, log out
+            if (e.altKey && e.key === 's') {
+                // Prevent the default behavior of the 'a' key
+                e.preventDefault();
+                // Call the logout function
+                window.location.href = '/schedule';
+            }
+        }, false);
+        // Add an event listener for 'keydown' events for portfolio
+        document.addEventListener('keydown', e => {
+            // If 'Control' key is held down and the 'a' key is pressed, log out
+            if (e.altKey && e.key === 'p') {
+                // Prevent the default behavior of the 'a' key
+                e.preventDefault();
+                // Call the logout function
+                window.location.href = '/portfolio';
+            }
+        }, false);
+        // Add an event listener for 'keydown' events for media
+        document.addEventListener('keydown', e => {
+            // If 'Control' key is held down and the 'a' key is pressed, log out
+            if (e.altKey && e.key === 'm') {
+                // Prevent the default behavior of the 'a' key
+                e.preventDefault();
+                // Call the logout function
+                window.location.href = '/media';
+            }
+        }, false);
+        // Add an event listener for 'keydown' events for inbox
+        var authUserId = @json(auth()->user()->id);
+        document.addEventListener('keydown', e => {
+            // If 'Control' key is held down and the 'a' key is pressed, log out
+            if (e.altKey && e.key === 'i') {
+                // Prevent the default behavior of the 'a' key
+                e.preventDefault();
+                // Call the logout function
+                window.location.href = '/inbox/'+authUserId;
+            }
+        }, false);
 
 
     </script>
